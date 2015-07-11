@@ -29,33 +29,28 @@ Codevelop is a clone of OKCupid developed using Rails and Backbone. Users are ab
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
-I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2.
+### Phase 1: User Authentication (~1 day)
+I will set up user signup with authentication using the standard pattern suggested by App Academy. By the end of this phase, users will be able to sign in and fill in parts of their profile. I may or may not implement login using a github account.
+
+I will push this phase to Heroku and test everything before proceeding to Phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+### Phase 2: User Profile (~1 days)
+In this phase I will add API routes to show user profile data as JSON, then add backbone models and collections to fetch that data. By the end of this phase, users will be able to fully fill in their profile, as well as editing it, all within the central Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: User Show Page (~2 days)
+In this phase I will add the ability for users to view their own profiles, as well as those of other users. I will user Filepicker for file upload so
+users can add profile images. I will look into using the ace embeddable text editor so that users can upload code snippets.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
+### Phase 4: Answering Questions (~2 days)
+In this phase I will investigate finding a gem which makes surveying users easy. I will then implement
+
+### Phase 5: Browse Users Index (~1-2 days)
 I'll start by adding a `feed` route that uses the `current_user`'s
 `subscribed_blogs` association to serve a list of blog posts ordered
 chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
@@ -64,7 +59,7 @@ see after logging in.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
+### Phase 6:  Messaging (~2 days)
 I'll need to add `search` routes to both the Blogs and Posts controllers. On the
 Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
 and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
