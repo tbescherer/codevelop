@@ -1,26 +1,26 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Landing
+![landing]
 
-## Feed Show (landing page)
-![feed-show]
+## Signup
+![signup]
 
-## Blog Show
-![blog-show]
+## Browse users
+![index]
 
-## Post Show
-![post-show]
+## User profile
+![show]
 
-## Post Form
-![post-form]
+## Send Message
+![message]
 
-## Search Results
-![search-results]
+## Answer Question
+![question]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[landing]: ./wireframes/codevelop-1.png
+[signup]: ./wireframes/codevelop-2.png
+[index]: ./wireframes/codevelop-3.png
+[show]: ./wireframes/codevelop-4.png
+[message]: ./wireframes/codevelop-5.png
+[question]: ./wireframes/codevelop-6.png
