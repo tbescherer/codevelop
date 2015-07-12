@@ -1,22 +1,18 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Browse Users Index
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
+
 
 ### Views
 
 ## Backbone
 ### Models
-
 ### Collections
-
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
+* UserIndex
+
 
 ## Gems/Libraries
-

@@ -1,20 +1,25 @@
-# Phase 4: User Feeds
+# Phase 4: Answering Questions
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+* QuestionAnswersController(Create, New, show)
+Api::QuestionsController (show)
 
 ### Views
-posts/feed.json.jbuilder
+questions/show.json.jbuilder
 
 ## Backbone
 ### Models
+Answer
+Question
 
 ### Collections
+Questions
+Answers
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
-
+* QuestionShow (composite view, inside user profile)
+* AnswerShow
 ## Gems/Libraries
