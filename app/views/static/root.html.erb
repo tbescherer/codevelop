@@ -2,5 +2,15 @@
   <div class="main">
     <h1 id="site-title"> Codevelop </h1>
     <h2>Find a coding pair who isn't bugged by your bugs</h2>
+    <form action="<%= new_user_url %>" method="post">
+      <p>I am: </p>
+      <select class="language-selector" name="user[language]">
+        <option value="none">Language Agnostic</option>
+        <option value="ruby">A Rubyist</option>
+        <option value="javascript">A javascripter</option>
+      </select>
+      <button>Submit</button>
+    </form>
+
   </div>
 </div>
