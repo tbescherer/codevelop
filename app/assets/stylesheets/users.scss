@@ -4,9 +4,18 @@
  body {
   background: #114A9E;
   color: #D6E1EB;
+  width: 100%;
 }
 
 #main {
+  margin: auto;
   background: #F3F5F9;
   color: #5E6572;
+  width: 950px;
+  display: block;
+  float: center;
+}
+
+.backdrop {
+  width: inherit;
 }
