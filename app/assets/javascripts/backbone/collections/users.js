@@ -8,9 +8,9 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
       user = new Codevelop.Models.User({id: id})
       user.fetch({
         success: function() {
-          users.add(user);
-        }
-      })
+          this.add(user);
+        }.bind(this)
+      });
     } else {
       user.fetch();
     }
@@ -18,4 +18,4 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
   }
 })
 
-Codevelop.Collections.users = new Codevelop.Collections.Users()
+Codevelop.Collections.users = new Codevelop.Collections.Users
