@@ -1,11 +1,12 @@
-#= require_self
-#= require_tree ./templates
-#= require_tree ./models
-#= require_tree ./views
-#= require_tree ./routers
-
-window.Codevelop =
-  Models: {}
-  Collections: {}
-  Routers: {}
-  Views: {}
+window.Codevelop = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  Mixins: {},
+  initialize: function() {
+    console.log("hello from backbone!")
+    new Codevelop.Routers.Router;
+    Backbone.history.start();
+  }
+};
