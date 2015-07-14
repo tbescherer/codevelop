@@ -1,6 +1,9 @@
 <div> Hello </div>
 <ul class='users'>
   <% users.each(function(user) { %>
-    <li> <%= user.escape('username') %> </li>
+    <li>
+      <h3><%= user.escape('username') %></h3>
+      <p><%= user.escape('language') %></p>
+    </li>
   <% }) %>
 </ul>
