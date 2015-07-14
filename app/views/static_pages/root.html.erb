@@ -19,7 +19,9 @@
   </section>
   <% else %>
     You're logged in!
-    <section id="menu-bar"></section>
+    <section id="menu-bar">
+    <%= render partial: "menu" %>
+    </section>
     <section id="main"></section>
     <script>$(Codevelop.initialize);</script>
   <% end %>
