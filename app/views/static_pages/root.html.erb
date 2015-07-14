@@ -1,5 +1,5 @@
 <section class="backdrop">
-  <% if signed_in? %>
+  <% if not signed_in? %>
   <section class="">
     <p>Have an account?</p>
     <a href="session/new">Sign In</a>
@@ -9,7 +9,7 @@
     <h2>Find a coding pair who isn't bugged by your bugs</h2>
     <form action="<%= new_user_url %>" method="get">
       <p>I am: </p>
-      <select class="language-selector" name="user[language]">
+      <select class="language-selector" name="language">
         <option value="none">Language Agnostic</option>
         <option value="ruby">A Rubyist</option>
         <option value="javascript">A javascripter</option>

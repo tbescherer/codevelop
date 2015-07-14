@@ -1,5 +1,5 @@
 <h1>Sign Up</h1>
-
+<% params[:language] ||= "none" %>
 <form action="<%= users_url %>" method="post">
   <%= user_auth_token %>
   <label for="username">Username</label>
@@ -10,6 +10,6 @@
 
   <label for="password">Password</label>
   <input type="password" name="user[password]" id="password">
-  <input type="hidden" name="user[language]" value="<%=params[:user][:language]%>">
+  <input type="hidden" name="user[language]" value="<%=params[:language]%>">
   <input type="submit" value="Sign Up">
 </form>

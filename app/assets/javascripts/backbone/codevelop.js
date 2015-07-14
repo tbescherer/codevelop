@@ -6,7 +6,7 @@ window.Codevelop = {
   Mixins: {},
   initialize: function() {
     console.log("hello from backbone!")
-    new Codevelop.Routers.Router;
+    new Codevelop.Routers.Router();
     Backbone.history.start();
   }
 };
