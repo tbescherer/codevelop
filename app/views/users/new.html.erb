@@ -1,3 +1,15 @@
-Welcome to Codevelop.
+<h1>Sign Up</h1>
 
-As you can see, we don't have any features just yet, but try again soon.
+<form action="<%= users_url %>" method="post">
+  <%= user_auth_token %>
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" id="username">
+
+  <label for="email">Email</label>
+  <input type="text" name="user[email]" id="email">
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" id="password">
+
+  <input type="submit" value="Sign Up">
+</form>
