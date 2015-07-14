@@ -27,6 +27,10 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   },
 
   userProfile: function() {
+    var currentUser = new Codevelop.Models.CurrentUser();
+    currentUser.fetch()
+    var view = new Codevelop.Views.CurrentUserProfile({model: currentUser})
+    this._swapView(view);
   },
 
   _swapView: function(view) {
