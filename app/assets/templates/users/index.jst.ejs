@@ -1,7 +1,7 @@
 <h1> Matches </h1>
-<ul class='users'>
+<ul class='users group'>
   <% users.each(function(user) { %>
-    <li>
+    <li class="user-index-block">
       <h3><%= user.escape('username') %></h3>
       <p><%= user.escape('language') %></p>
     </li>

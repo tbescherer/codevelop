@@ -13,9 +13,30 @@
   color: #5E6572;
   width: 950px;
   display: block;
-  float: center;
 }
 
 .backdrop {
   width: inherit;
+}
+
+.menu-button {
+  color: #D6E1EB;
+  font-size: 14px;
+  font-family: roboto;
+}
+
+.user-index-block {
+  border: 1px solid gray;
+  float: left;
+  margin-left: 28px;
+  margin-top: 30px;
+  width: 278px;
+  height: 200px;
+  display: block
+}
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
 }
