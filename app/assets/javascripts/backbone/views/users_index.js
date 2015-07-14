@@ -1,6 +1,13 @@
 Codevelop.Views.UsersIndex = Backbone.View.extend({
+  template: JST['users/index'],
+
+  initialize: function() {
+    this.listenTo(this.collection, 'sync', this.render)
+  },
 
   render: function() {
-    this.$el.append("HI!")
+    var content = this.template({users: this.collection});
+    this.$el.html(content)
+    return this;
   }
 })
