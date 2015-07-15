@@ -1,3 +1,3 @@
-Codevelop.Models.CurrentUser = Backbone.Model.extend({
+Codevelop.Models.CurrentUser = Codevelop.Models.User.extend({
   url: '/api/current_user'
 });
