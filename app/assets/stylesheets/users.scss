@@ -47,3 +47,29 @@
   margin: auto;
   display: block;
 }
+
+.content-tabs {
+  display: block;
+  float: left;
+  width: 68%
+}
+
+.self-facts-view {
+  display: block;
+  float: left;
+  width: 28%;
+}
+
+.content-selector-buttons {
+  display: block;
+  width: 100%;
+}
+
+.tabs > li {
+  display: block;
+  float: left;
+}
+
+#details li {
+  border-bottom: 1px solid black;
+}

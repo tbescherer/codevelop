@@ -1,14 +1,27 @@
-<%= user.escape('username') %>
-
-
 <section class="face-view">
   <img class="profile-picture" src="http://placehold.it/280x150">
+  <%= user.escape('username') %>
 </section>
-<header>
+<section class="content-selector-buttons group">
   <ul class="tabs" data-content-tabs="#content-tabs">
     <li><button id="about-button" class="active">About</button></li>
     <li><button id="question-button">Questions</button></li>
   </ul>
-</header>
-<section class="content-tabs"></section>
-<section class="self-facts-view"></section>
+</section>
+<section class="content-tabs group"></section>
+<section class="self-facts-view group">
+  <div id="looking-for">
+    <h3>I'm looking For</h3>
+      <ul>
+        <li><%=user.escape('language')%></li>
+      </ul>
+  </div>
+  <div id="details">
+    <h3>My details</h3>
+    <ul>
+      <li>detail 1</li>
+      <li>detail 2</li>
+      <li>detail 3</li>
+    </ul>
+  </div>
+</section>

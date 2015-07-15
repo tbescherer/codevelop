@@ -1,4 +1,5 @@
 Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
+  className: "group",
   template: JST['current_user/show'],
 
   events: {
@@ -13,6 +14,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({user: this.model});
     this.$el.html(content);
+    this.aboutView();
     return this;
   },
 
