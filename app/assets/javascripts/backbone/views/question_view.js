@@ -8,6 +8,7 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
 
   initialize: function(options) {
     this.listenTo(this.model.answered_questions(), 'sync', this.render)
+    this.listenTo(Codevelop.Collections.questions, 'add', this.render)
     this.question_id = options.question_id
   },
 
@@ -19,7 +20,6 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
   },
 
   submitUserAnswer: function(event){
-    console.log("You made it!")
     event.preventDefault();
     var userAnswer = new Codevelop.Models.UserAnswer()
     var attrs = $(event.currentTarget).serializeJSON()

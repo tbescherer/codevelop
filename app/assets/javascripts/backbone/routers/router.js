@@ -23,7 +23,6 @@ Codevelop.Routers.Router = Backbone.Router.extend({
 
   userShow: function(id) {
     var user = this.users.getOrFetch(id)
-    console.log("hello from usershow!")
     var view = new Codevelop.Views.UserShow({model: user})
     this._swapView(view);
   },
