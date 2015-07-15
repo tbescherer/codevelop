@@ -1,7 +1,8 @@
 module Api
   class CurrentUsersController < ApplicationController
     def show
-      render json: current_user
+      @user = current_user
+      render "api/users/show"
     end
   end
 end

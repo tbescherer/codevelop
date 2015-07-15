@@ -1,5 +1,5 @@
 Codevelop.Models.User = Backbone.Model.extend({
-  urlRoot: '/users/',
+  urlRoot: '/api/users/',
 
   parse: function(response){
     if (response.question_answers) {
