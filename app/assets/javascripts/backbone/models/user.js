@@ -18,8 +18,8 @@ Codevelop.Models.User = Backbone.Model.extend({
   },
 
   assess_compatibility: function(other_user) {
-    var numerator = 0.0
-    var denominator = 1.0
+    var numerator = Math.round(Math.random()*100)
+    var denominator = 1
     var quest_ids = other_user.answered_questions().pluck("question_id")
     this.answered_questions().each(function(question) {
       if (quest_ids.indexOf(question.id) != -1) {
