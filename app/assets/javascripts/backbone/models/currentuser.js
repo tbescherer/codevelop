@@ -1,3 +1,3 @@
 Codevelop.Models.CurrentUser = Codevelop.Models.User.extend({
-  url: '/api/current_user'
+  urlRoot: '/api/current_user'
 });

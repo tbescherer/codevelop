@@ -1,3 +1,3 @@
 Codevelop.Models.AnswerChoice = Backbone.Model.extend({
-  url: '/api/answer_choices'
+  urlRoot: '/api/answer_choices'
 });

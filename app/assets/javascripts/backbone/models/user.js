@@ -16,4 +16,20 @@ Codevelop.Models.User = Backbone.Model.extend({
 
     return this._answeredQuestions;
   },
+
+  assess_compatibility: function(other_user) {
+    var numerator = 0.0
+    var denominator = 1.0
+    var quest_ids = other_user.answered_questions().pluck("question_id")
+    this.answered_questions().each(function(question) {
+      if (quest_ids.indexOf(question.id) != -1) {
+        if (question.answer_id === 1) {
+
+        } else {
+
+        }
+      }
+    })
+    return numerator/denominator;
+  }
 })

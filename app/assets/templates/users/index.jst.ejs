@@ -6,6 +6,8 @@
         <img class="user-picture" src="http://placehold.it/280x150">
         <h3><%= user.escape('username') %></h3>
         <p><%= user.escape('language') %></p>
+        <% console.log(user) %>
+        <p> <%= user.assess_compatibility(current_user) %>% Match</p>
       </li>
     </a>
   <% }) %>

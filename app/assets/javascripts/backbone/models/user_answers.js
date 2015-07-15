@@ -1,3 +1,3 @@
 Codevelop.Models.UserAnswer = Backbone.Model.extend({
-  url: '/api/user_answers'
+  urlRoot: '/api/user_answers'
 });

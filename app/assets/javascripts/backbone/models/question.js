@@ -2,7 +2,6 @@ Codevelop.Models.Question = Backbone.Model.extend({
   urlRoot: '/api/questions',
 
   parse: function(response){
-    debugger
     if (response.answers) {
       this.answerChoices().set(response.answers, { parse: true});
       delete response.answers;

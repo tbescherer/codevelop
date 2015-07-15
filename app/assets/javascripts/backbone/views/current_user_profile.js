@@ -27,7 +27,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   questionView: function() {
     console.log("hello from questionView")
     var q_id_arr = this.model.answered_questions().pluck("question_id");
-    var q_id = q_id_arr[q_id_arr.length-1] + 1;
+    var q_id = q_id_arr[q_id_arr.length-1] + 1 || 1
     var question = Codevelop.Collections.questions.getOrFetch(q_id);
     var view = new Codevelop.Views.QuestionView({model: this.model, question: question})
     this.$el.find(".content-tabs").html(view.render().$el)
