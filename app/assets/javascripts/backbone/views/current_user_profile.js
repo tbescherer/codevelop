@@ -1,4 +1,4 @@
-Codevelop.Views.CurrentUserProfile = Backbone.View.extend({
+Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   template: JST['current_user/show'],
 
   events: {
@@ -18,11 +18,13 @@ Codevelop.Views.CurrentUserProfile = Backbone.View.extend({
 
   aboutView: function() {
     console.log("hello from aboutview");
-    this.$el.find(".content-tabs").append("about")
+    var view = new Codevelop.Views.AboutView({user: this.model})
+    this.$el.find(".content-tabs").html(view.render().$el)
   },
 
   questionView: function() {
     console.log("hello from questionView")
-    this.$el.find(".content-tabs").append("question")
-  }
+    var view = new Codevelop.Views.QuestionView({user: this.model})
+    this.$el.find(".content-tabs").html(view.render().$el)
+  },
 })

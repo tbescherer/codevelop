@@ -17,4 +17,5 @@
 //= require backbone
 //= require backbone/codevelop
 //= require_tree ../templates
+//= require_tree ./utils
 //= require_tree .
