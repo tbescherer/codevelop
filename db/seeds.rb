@@ -9,3 +9,12 @@
 30.times do
   User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", language: Faker::Hacker.noun)
 end
+
+
+20.times do |i|
+  text = "#{Faker::Hacker.ingverb} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}. Yes or no?"
+  question = Question.create(body: text)
+  question.answer_choices.create(body:"Yes")
+  question.answer_choices.create(body:"No")
+  question.answer_choices.create(body:"Every once in a while")
+end

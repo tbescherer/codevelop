@@ -23,7 +23,6 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
     event.preventDefault();
     var userAnswer = new Codevelop.Models.UserAnswer()
     var attrs = $(event.currentTarget).serializeJSON()
-    debugger
     userAnswer.save(attrs, {
       success: function () {
         this.render();
