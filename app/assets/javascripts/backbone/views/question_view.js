@@ -1,6 +1,10 @@
 Codevelop.Views.QuestionView = Backbone.View.extend({
   template: JST['current_user/questions'],
 
+  events: {
+    "submit #user_answer": "submitUserAnswer"
+  },
+
   initialize: function(options) {
     this.question = options.question
     this.listenTo(this.model.answered_questions(), 'sync', this.render)
@@ -8,10 +12,10 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
   },
 
   render: function() {
-    var content = this.template({user: this.model, question: this.question});
-    debugger
+    var content = this.template({user: this.model, question: this.question, answers: this.question.answerChoices()});
     this.$el.html(content);
-    console.log("rendering")
     return this;
-  }
+  },
+
+  submitUserAnswer
 })

@@ -1,3 +1,19 @@
 <h1>Question stuff</h1>
 <%= console.log(question) %>
 <%= question.escape("body") %>
+
+<form id="user-answer">
+<% answers.forEach(function(answer){ %>
+  <input type="radio" name="user_answer[answer_choice_id]" value="<%=answer.id%>"><%=answer.escape("body")%></input>
+<% }) %>
+
+<label for="weight">Importance</label>
+  <input type="radio" name="user_answer[weight]" value="1">A little</input>
+  <input type="radio" name="user_answer[weight]" value="10">Somewhat</input>
+  <input type="radio" name="user_answer[weight]" value="250">Very</input>
+
+  <label for="optional_text">Explain your answer.</label>
+  <textarea id="optional_text" name="user_answer[explanation]"></textarea>
+  <button class="submit-question">Answer</button>
+  <button class="skip-question">Skip Question</button>
+</form>

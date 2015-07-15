@@ -1,3 +1,21 @@
 Codevelop.Models.Question = Backbone.Model.extend({
-  url: '/api/questions'
+  urlRoot: '/api/questions',
+
+  parse: function(response){
+    debugger
+    if (response.answers) {
+      this.answerChoices().set(response.answers, { parse: true});
+      delete response.answers;
+    }
+    return response;
+  },
+
+
+  answerChoices: function() {
+    if (!this._answerChoices) {
+      this._answerChoices = new Codevelop.Collections.AnswerChoices([], {question: this})
+    }
+
+    return this._answerChoices;
+  },
 });
