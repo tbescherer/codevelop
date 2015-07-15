@@ -2,7 +2,7 @@ Codevelop.Views.AboutView = Backbone.View.extend({
   template: JST['current_user/about'],
 
   render: function() {
-    var content = this.template();
+    var content = this.template({user: this.model});
     this.$el.html(content);
     return this;
   }

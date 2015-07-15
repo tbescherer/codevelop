@@ -2,18 +2,18 @@ Codevelop.Models.User = Backbone.Model.extend({
   urlRoot: '/api/users/',
 
   parse: function(response){
-    if (response.question_answers) {
-      this.question_answers().set(response.question_answers, { parse: true});
-      delete response.question_answers;
+    if (response.answer_choices) {
+      this.answered_questions().set(response.answer_choices, { parse: true});
+      delete response.answer_choices;
     }
     return response;
   },
 
-  question_answers: function() {
-    if (!this._questionAnswers) {
-      this._questionAnswers = new Codevelop.Collections.QuestionAnswers([], {user: this})
+  answered_questions: function() {
+    if (!this._answeredQuestions) {
+      this._answeredQuestions = new Codevelop.Collections.UserAnswers([], {user: this})
     }
 
-    return this._lists;
-  }
+    return this._answeredQuestions;
+  },
 })
