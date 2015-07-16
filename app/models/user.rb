@@ -8,12 +8,46 @@ class User < ActiveRecord::Base
   has_many :user_answers
   has_many :answer_choices, through: :user_answers, source: :answer_choice
   has_many :answered_questions, through: :answer_choices, source: :question
-  
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
     user
   end
+
+  def match_score2(other_user)
+    denominator = 1
+    numerator = 0
+    my_answer_choices = self.answer_choices
+    self.answered_questions.each do |question|
+      if other_user.answered_questions.include?(question)
+        my_answer = my_answer_choices.find_by(question_id: question.id)
+        other_answer = other_user.answer_choices.find_by(question_id: question.id)
+        if my_answer == other_answer
+          numerator += 1
+        end
+          denominator += 1
+      end
+    end
+    return (numerator.to_f/denominator).round(2)*100
+  end
+
+  def match_score(other_user)
+    denom = 1
+    num = 0
+    my_answer_choices = self.answer_choices
+    questions = self.answered_questions & other_user.answered_questions
+    questions.each do |question|
+      my_answer = my_answer_choices.find_by(question_id: question.id)
+      other_answer = other_user.answer_choices.find_by(question_id: question.id)
+      if my_answer == other_answer
+        num += 1
+      end
+        denom += 1
+    end
+    return (num.to_f/denom).round(2)*100
+  end
+
 
   def password=(password)
     @password = password
