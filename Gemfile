@@ -30,7 +30,8 @@ gem 'ejs', '~> 1.1.1'
 gem 'serialize_json-rails'
 gem 'omniauth-github'
 gem 'figaro'
-
+gem 'bootstrap-sass'
+gem "font-awesome-rails"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,0 +1,87 @@
+/*
+ * Social Buttons for Bootstrap
+ *
+ * Copyright 2013-2015 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ *
+ * https://codevelop.com/lipis/bootstrap-social
+ */
+
+.btn-social{
+  position:relative;
+  padding-left:44px;
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.btn-social>:first-child{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:32px;
+  line-height:34px;
+  font-size:1.6em;
+  text-align:center;
+  border-right:1px solid rgba(0,0,0,0.2)}
+
+.btn-social-icon{
+  position:relative;
+  padding-left:44px;
+  text-align:left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  height:34px;
+  width:34px;
+  padding:0
+}
+
+.btn-github{
+  color:#fff;
+  background-color:#444;
+  border-color:rgba(0,0,0,0.2);
+  width: 180px;
+}
+
+.btn-github:hover,.btn-github:focus,.btn-github:active,.btn-github.active,.open>.dropdown-toggle.btn-github{
+  color:#fff;
+  background-color:#2b2b2b;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.btn-github:active,.btn-github.active,.open>.dropdown-toggle.btn-github{
+  background-image:none
+}
+
+.btn-github.disabled,.btn-github[disabled],fieldset[disabled] .btn-github,.btn-github.disabled:hover,.btn-github[disabled]:hover,fieldset[disabled] .btn-github:hover,.btn-github.disabled:focus,.btn-github[disabled]:focus,fieldset[disabled] .btn-github:focus,.btn-github.disabled:active,.btn-github[disabled]:active,fieldset[disabled] .btn-github:active{
+  background-color:#444;border-color:rgba(0,0,0,0.2);
+}
+
+.btn-codevelop > i {
+  font-family: 'Sansita One';
+}
+
+.btn-codevelop{
+  color:#fff;
+  background-color:#CB2027;
+  border-color:rgba(0,0,0,0.2);
+  width: 180px;
+}
+
+.btn-codevelop:hover,.btn-codevelop:focus,.btn-codevelop:active,.btn-codevelop.active,.open>.dropdown-toggle.btn-codevelop{
+  color:#fff;
+  background-color: maroon;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.btn-codevelop:active,.btn-codevelop.active,.open>.dropdown-toggle.btn-codevelop{
+  background-image:none
+}
+
+.btn-codevelop.disabled,.btn-codevelop[disabled],fieldset[disabled] .btn-codevelop,.btn-codevelop.disabled:hover,.btn-codevelop[disabled]:hover,fieldset[disabled] .btn-codevelop:hover,.btn-codevelop.disabled:focus,.btn-codevelop[disabled]:focus,fieldset[disabled] .btn-codevelop:focus,.btn-codevelop.disabled:active,.btn-codevelop[disabled]:active,fieldset[disabled] .btn-codevelop:active{
+  background-color:#CB2027;
+  border-color:rgba(0,0,0,0.2);
+}
