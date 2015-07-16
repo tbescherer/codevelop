@@ -18,12 +18,14 @@ Codevelop.Models.User = Backbone.Model.extend({
   },
 
   assess_compatibility: function(other_user) {
-    var numerator = Math.round(Math.random()*100)
+
+    var numerator = 0
     var denominator = 1
     var quest_ids = other_user.answered_questions().pluck("question_id")
-    this.answered_questions().each(function(question) {
-      if (quest_ids.indexOf(question.id) != -1) {
-        if (question.answer_id === 1) {
+    this.answered_questions().each(function(user_answer) {
+      if (quest_ids.indexOf(user_answer.get("question_id")) != -1) {
+        console.log("we have a match!")
+        if (user_answer.id === 1) {
 
         } else {
 

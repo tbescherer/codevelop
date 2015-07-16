@@ -2,6 +2,10 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
   url: "/api/users/",
   model: Codevelop.Models.User,
 
+  parse: function(response) {
+    return response;
+  },
+
   getOrFetch: function(id) {
     var user = this.get(id);
     var users = this;
