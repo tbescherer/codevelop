@@ -25,10 +25,11 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
     var attrs = $(event.currentTarget).serializeJSON()
     userAnswer.save(attrs, {
       success: function () {
+        this.model.answered_questions().add(userAnswer)
+        this.question_id++
         this.render();
       }.bind(this)
     });
-    this.question_id++
   },
 
   skipQuestion: function(event) {
@@ -39,9 +40,9 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
     var attrs = {user_answer: {answer_choice_id: answer_id, explanation:"", weight: 0}}
     userAnswer.save(attrs, {
       success: function() {
+        this.model.answered_questions().add(userAnswer)
         this.render();
       }.bind(this)
     })
-    this.question_id++
   }
 })

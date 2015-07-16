@@ -13,7 +13,6 @@ Codevelop.Models.User = Backbone.Model.extend({
     if (!this._answeredQuestions) {
       this._answeredQuestions = new Codevelop.Collections.UserAnswers([], {user: this})
     }
-
     return this._answeredQuestions;
   },
 

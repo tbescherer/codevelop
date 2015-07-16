@@ -12,7 +12,7 @@ module Api
 
     private
     def user_answer_params
-      params.require(:user_answer).permit(:answer_choice_id, :weight, :explanation)
+      params.require(:user_answer).permit(:user_id, :answer_choice_id, :weight, :explanation)
     end
   end
 end
