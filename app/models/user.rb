@@ -33,23 +33,6 @@ class User < ActiveRecord::Base
     user
   end
 
-  def match_score2(other_user)
-    denominator = 1
-    numerator = 0
-    my_answer_choices = self.answer_choices
-    self.answered_questions.each do |question|
-      if other_user.answered_questions.include?(question)
-        my_answer = my_answer_choices.find_by(question_id: question.id)
-        other_answer = other_user.answer_choices.find_by(question_id: question.id)
-        if my_answer == other_answer
-          numerator += 1
-        end
-          denominator += 1
-      end
-    end
-    return (numerator.to_f/denominator).round(2)*100
-  end
-
   def match_score(other_user)
     denom = 1
     num = 0
@@ -64,6 +47,7 @@ class User < ActiveRecord::Base
         denom += 1
     end
     return (num.to_f/denom).round(2)*100
+    return 1
   end
 
 
