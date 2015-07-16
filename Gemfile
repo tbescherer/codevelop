@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'ejs', '~> 1.1.1'
 gem 'serialize_json-rails'
+gem 'omniauth-github'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
