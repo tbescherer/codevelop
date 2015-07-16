@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :user_answers, only: [:show, :new, :create]
   end
   root "static_pages#root"
+  get "/github-login/callback", to: "sessions#omniauth"
 end
