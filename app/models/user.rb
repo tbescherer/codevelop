@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   has_many :answer_choices, through: :user_answers, source: :answer_choice
   has_many :answered_questions, through: :answer_choices, source: :question
 
+  has_many :conversation_replies
+  has_many :conversations, through: :conversation_replies, source: :conversation
+
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
@@ -47,7 +51,6 @@ class User < ActiveRecord::Base
         denom += 1
     end
     return (num.to_f/denom).round(2)*100
-    return 1
   end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716192129) do
+ActiveRecord::Schema.define(version: 20150716214909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,27 @@ ActiveRecord::Schema.define(version: 20150716192129) do
   end
 
   add_index "answer_choices", ["question_id"], name: "index_answer_choices_on_question_id", using: :btree
+
+  create_table "conversation_replies", force: :cascade do |t|
+    t.integer  "conv_id",    null: false
+    t.integer  "user_id",    null: false
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversation_replies", ["conv_id"], name: "index_conversation_replies_on_conv_id", using: :btree
+  add_index "conversation_replies", ["user_id"], name: "index_conversation_replies_on_user_id", using: :btree
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "user_one_id", null: false
+    t.integer  "user_two_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversations", ["user_one_id"], name: "index_conversations_on_user_one_id", using: :btree
+  add_index "conversations", ["user_two_id"], name: "index_conversations_on_user_two_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.text     "body",       null: false
@@ -44,15 +65,20 @@ ActiveRecord::Schema.define(version: 20150716192129) do
   add_index "user_answers", ["user_id"], name: "index_user_answers_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string "username",                         null: false
-    t.string "email",                            null: false
-    t.string "password_digest",                  null: false
-    t.string "session_token",                    null: false
-    t.string "language",        default: "none"
-    t.string "uid"
-    t.string "provider"
+    t.string   "username",                         null: false
+    t.string   "email",                            null: false
+    t.string   "password_digest",                  null: false
+    t.string   "session_token",                    null: false
+    t.string   "language",        default: "none"
+    t.string   "uid"
+    t.string   "provider"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
