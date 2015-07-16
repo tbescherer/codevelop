@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'ejs', '~> 1.1.1'
 gem 'serialize_json-rails'
 gem 'omniauth-github'
+gem 'figaro'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
