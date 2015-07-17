@@ -41,19 +41,16 @@ class User < ActiveRecord::Base
   end
 
   def match_score(other_user)
-    denom = 1
-    num = 0
-    my_answer_choices = self.answer_choices
-    # questions = self.answered_questions & other_user.answered_questions
-    # questions.each do |question|
-      # my_answer = my_answer_choices.find_by(question_id: question.id)
-      # other_answer = other_user.answer_choices.find_by(question_id: question.id)
-    #   if my_answer == other_answer
-    #     num += 1
-    #   end
-    #     denom += 1
-    # end
-    return (num.to_f/denom).round(2)*100
+    my_user_answers = self.user_answers
+    other_user_answers = other_user.user_answers
+    my_answer_choices = my_user_answers.map{|i|i.answer_choice}
+    other_answer_choices = other_user_answers.map{|i|i.answer_choice}
+    # my_questions = my_answer_choices.map{|i|i.question}
+    # other_questions = other_answer_choices.map{|i|i.question}
+    # answer_choices = my_answer_choices & other_answer_choices
+    # questions = my_questions & other_questions
+    return 1
+    # return (answer_choices.count.to_f/(questions.count+1)).round(2)*100
   end
 
 

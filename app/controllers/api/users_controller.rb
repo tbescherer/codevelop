@@ -7,7 +7,7 @@ module Api
     end
 
     def index
-      @users = User.includes(user_answers: [answer_choice: :question]).all
+      @users = User.eager_load(user_answers: [answer_choice: :question])
       render :index
     end
   end
