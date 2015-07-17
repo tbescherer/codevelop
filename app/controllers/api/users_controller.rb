@@ -7,7 +7,7 @@ module Api
     end
 
     def index
-      @users = User.includes(user_answers: [answer_choice: [:question]]).all
+      @users = User.includes(user_answers: [answer_choice: :question]).all
       render :index
     end
   end

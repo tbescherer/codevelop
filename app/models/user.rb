@@ -44,7 +44,6 @@ class User < ActiveRecord::Base
     denom = 1
     num = 0
     my_answer_choices = self.answer_choices
-    puts other_user.user_answers
     # questions = self.answered_questions & other_user.answered_questions
     # questions.each do |question|
       # my_answer = my_answer_choices.find_by(question_id: question.id)
