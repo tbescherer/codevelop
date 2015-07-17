@@ -9,7 +9,6 @@ Codevelop.Models.Conversation = Backbone.Model.extend({
     return response;
   },
 
-
   replies: function() {
     if (!this._replies) {
       this._replies = new Codevelop.Collections.ConversationReplies([], {conversation: this})
