@@ -3,6 +3,8 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
     this.$rootEl = options.$rootEl;
     this.users = options.users;
+    this.conversations = Codevelop.Collections.conversations
+    this.conversations.fetch()
     this.currentUser = new Codevelop.Models.CurrentUser();
     this.currentUser.fetch()
   },
@@ -35,16 +37,13 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   },
 
   userMessages: function () {
-    var messages = new Codevelop.Collections.Conversations()
-    messages.fetch()
-    var view = new Codevelop.Views.Messages({model: this.currentUser, conversations: messages})
+    var view = new Codevelop.Views.Messages({model: this.currentUser, conversations: this.conversations})
     this._swapView(view);
   },
 
   userMessageShow: function (id) {
-    var messages = new Codevelop.Models.Conversation({id: id})
-    message.fetch()
-    var view = new Codevelop.Views.MessageShow({model: messages, current_user: this.current_user})
+    var message = this.conversations.getOrFetch(id);
+    var view = new Codevelop.Views.MessageShow({model: message, current_user: this.current_user})
     this._swapView(view);
   },
 

@@ -17,3 +17,5 @@ Codevelop.Collections.Conversations = Backbone.Collection.extend({
     return conversation;
   }
 })
+
+Codevelop.Collections.conversations = new Codevelop.Collections.Conversations()

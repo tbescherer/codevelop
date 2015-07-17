@@ -3,7 +3,6 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
   model: Codevelop.Models.User,
 
   parse: function(response) {
-    console.log(response);
     return response;
   },
 
