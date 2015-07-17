@@ -4,7 +4,6 @@ Codevelop.Models.Conversation = Backbone.Model.extend({
   parse: function(response){
     if (response.replies) {
       this.replies().set(response.replies, { parse: true});
-      delete response.replies;
     }
     return response;
   },

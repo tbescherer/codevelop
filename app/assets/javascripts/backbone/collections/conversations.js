@@ -1,5 +1,6 @@
 Codevelop.Collections.Conversations = Backbone.Collection.extend({
   url: "/api/conversations/",
+  model: Codevelop.Models.Conversation,
 
   getOrFetch: function(id) {
     var conversation = this.get(id);
@@ -18,4 +19,4 @@ Codevelop.Collections.Conversations = Backbone.Collection.extend({
   }
 })
 
-Codevelop.Collections.conversations = new Codevelop.Collections.Conversations()
+Codevelop.Collections.conversations = new Codevelop.Collections.Conversations

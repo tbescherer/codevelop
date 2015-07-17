@@ -19,6 +19,7 @@
 //= require backbone/codevelop
 //= require_tree ../templates
 //= require_tree ./utils
+//= require ./backbone/models/conversation
 //= require ./backbone/models/user
 //= require ./backbone/models/currentuser
 //= require_tree .

@@ -7,7 +7,6 @@ Codevelop.Views.ConversationIndex = Backbone.View.extend({
   },
 
   render: function() {
-    debugger
     var content = this.template({user: this.model, conversations: this.conversations});
     this.$el.html(content);
     return this;
