@@ -45,14 +45,12 @@ class User < ActiveRecord::Base
     other_user_answers = other_user.user_answers
     my_answer_choices = my_user_answers.map{|i|i.answer_choice}
     other_answer_choices = other_user_answers.map{|i|i.answer_choice}
-    # my_questions = my_answer_choices.map{|i|i.question}
-    # other_questions = other_answer_choices.map{|i|i.question}
-    # answer_choices = my_answer_choices & other_answer_choices
-    # questions = my_questions & other_questions
-    return 1
-    # return (answer_choices.count.to_f/(questions.count+1)).round(2)*100
+    my_questions = my_answer_choices.map{|i|i.question}
+    other_questions = other_answer_choices.map{|i|i.question}
+    answer_choices = my_answer_choices & other_answer_choices
+    questions = my_questions & other_questions
+    return (answer_choices.count.to_f/(questions.count+1)).round(2)*100
   end
-
 
   def password=(password)
     @password = password
