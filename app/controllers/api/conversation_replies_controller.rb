@@ -7,9 +7,9 @@ module Api
       @conversation_reply = current_user.conversation_replies.new(conv_reply_params)
 
       if @conversation_reply.save
-        render json: ["hello"]
+        render json: []
       else
-        render json: ["goodbye"]
+        render json: []
       end
     end
 

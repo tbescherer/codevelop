@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :answered_questions, through: :answer_choices, source: :question
 
   has_many :conversation_replies
+  has_many :conversations, through: :conversation_replies, source: :conversation
 
   def conversations
     Conversation.by_user(self.id)

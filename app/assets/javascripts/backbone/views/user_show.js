@@ -4,7 +4,8 @@ Codevelop.Views.UserShow = Backbone.View.extend({
 
   events: {
     "click #about-button": "aboutView",
-    "click #photo-button": "pictureView"
+    "click #photo-button": "pictureView",
+    "click #start-convo": "startConvo"
   },
 
   initialize: function(options) {
@@ -13,7 +14,8 @@ Codevelop.Views.UserShow = Backbone.View.extend({
     this.question_id = options.question_id
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.current_user = options.current_user
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -32,5 +34,9 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   pictureView: function() {
     var view = new Codevelop.Views.PhotoView({mode: this.model})
     this.$el.find(".content-tabs").html(view.render().$el)
+  },
+
+  startConvo: function() {
+    var conversation = Codevelop.Collections.conversations.findOrCreate(this.current_user.id, this.model.id)
   }
 })

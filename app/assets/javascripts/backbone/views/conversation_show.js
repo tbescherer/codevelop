@@ -19,9 +19,9 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   sendMessage: function(event){
     console.log("sending message")
     event.preventDefault();
-    var attrs = $(event.currentTarget).serializeJSON();
-    attrs.conversation_reply.conv_id = this.model.id
-    attrs.conversation_reply.user = this.current_user
+    var attrs = $(event.currentTarget).serializeJSON()["conversation_reply"];
+    attrs.conv_id = this.model.id
+    attrs.user = {username: this.current_user.get("username")}
     var message = new Codevelop.Models.ConversationReply();
     message.save(attrs, {
       success: function(model){
