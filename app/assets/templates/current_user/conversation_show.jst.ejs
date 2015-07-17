@@ -2,8 +2,8 @@
 <% if (message.get("user_one") !== undefined) { %>
 <p>Conversation between <%= message.get("user_one").username %> and <%= message.get("user_two").username %> </p>
 <ul>
-  <% message.get("replies").forEach(function(reply) { %>
-    <li><%= reply.body %></li>
+  <% message.replies().each(function(reply) { %>
+    <li><%= reply.user.username%>: <%= reply.body %></li>
   <% }) %>
 </ul>
 <% } %>

@@ -1,5 +1,5 @@
-Codevelop.Views.Messages = Backbone.View.extend({
-  template: JST['current_user/messages'],
+Codevelop.Views.ConversationIndex = Backbone.View.extend({
+  template: JST['current_user/conversation_index'],
 
   initialize(options){
     this.conversations = options.conversations
@@ -7,6 +7,7 @@ Codevelop.Views.Messages = Backbone.View.extend({
   },
 
   render: function() {
+    debugger
     var content = this.template({user: this.model, conversations: this.conversations});
     this.$el.html(content);
     return this;

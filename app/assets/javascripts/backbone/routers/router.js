@@ -13,8 +13,8 @@ Codevelop.Routers.Router = Backbone.Router.extend({
     '': 'index',
     'users/:id': 'userShow',
     'profile': "userProfile",
-    'messages': "userMessages",
-    'messages/:id': "userMessageShow"
+    'messages': "conversationIndex",
+    'messages/:id': "conversationShow"
   },
 
   index: function() {
@@ -27,7 +27,7 @@ Codevelop.Routers.Router = Backbone.Router.extend({
 
   userShow: function(id) {
     var user = this.users.getOrFetch(id)
-    var view = new Codevelop.Views.UserShow({model: user})
+    var view = new Codevelop.Views.UserShow({model: user, current_user: this.currentUser})
     this._swapView(view);
   },
 
@@ -36,14 +36,14 @@ Codevelop.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  userMessages: function () {
-    var view = new Codevelop.Views.Messages({model: this.currentUser, conversations: this.conversations})
+  conversationIndex: function () {
+    var view = new Codevelop.Views.ConversationIndex({model: this.currentUser, conversations: this.conversations})
     this._swapView(view);
   },
 
-  userMessageShow: function (id) {
-    var message = this.conversations.getOrFetch(id);
-    var view = new Codevelop.Views.MessageShow({model: message, current_user: this.current_user})
+  conversationShow: function (id) {
+    var conversation = this.conversations.getOrFetch(id);
+    var view = new Codevelop.Views.ConversationShow({model: message, current_user: this.currentUser})
     this._swapView(view);
   },
 

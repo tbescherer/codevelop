@@ -1,9 +1,9 @@
 <h1> Hello from messages!</h1>
 <ul>
 <% conversations.each(function(conversation){ %>
-  <% if (conversation.get("user_one") !== undefined) { %>
+  <% if (conversation.get("user_one") !== undefined && conversation.replies !== undefined) { %>
   <a href="#/messages/<%= conversation.id %>"><li><p>Conversation between <%= conversation.get("user_one").username %> and <%= conversation.get("user_two").username %> </p>
-      <p><%= conversation.get("replies")[0].user.username %>: <%= conversation.get("replies")[0].body %> </p>
+      <p><%= conversation.replies()[0].user.username %>: <%= conversation.get("replies")[0].body %> </p>
   </li></a>
   <% } %>
 <% }) %>
