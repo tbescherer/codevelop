@@ -2,6 +2,10 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
   url: "/api/users/",
   model: Codevelop.Models.User,
 
+  comparator: function(thing) {
+    return -thing.get("match_score");
+  },
+
   parse: function(response) {
     return response;
   },

@@ -21,7 +21,6 @@ Codevelop.Collections.Conversations = Backbone.Collection.extend({
   findOrCreate: function(user_one_id, user_two_id){
     var convoOne = this.findWhere({user_one_id: user_one_id, user_two_id: user_two_id})
     var convoTwo = this.findWhere({user_one_id: user_two_id, user_two_id: user_one_id})
-    debugger
     var convo = convoOne || convoTwo
     if (!convo) {
       convo = new Codevelop.Models.Conversation({user_one_id: user_one_id, user_two_id: user_two_id})
