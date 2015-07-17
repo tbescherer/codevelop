@@ -1,1 +1,7 @@
 <h1> Hello from messages!</h1>
+<% conversations.each(function(conversation){ %>
+  <p>Conversation between <%= conversation.get("user_one").username %> and <%= conversation.get("user_two").username %> </p>
+  <ul>
+      <li><%= conversation.get("latest_reply").user.username %>: <%= conversation.get("latest_reply").body %> </li>
+  </ul>
+<% }) %>

@@ -34,7 +34,9 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   },
 
   userMessages: function () {
-    var view = new Codevelop.Views.Messages({model: this.currentUser})
+    var messages = new Codevelop.Collections.Conversations()
+    messages.fetch()
+    var view = new Codevelop.Views.Messages({model: this.currentUser, conversations: messages})
     this._swapView(view);
   },
 
