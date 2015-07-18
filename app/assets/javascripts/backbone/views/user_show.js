@@ -27,7 +27,6 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   },
 
   aboutView: function() {
-    debugger
     var view = new Codevelop.Views.AboutView({model: this.model})
     this.$el.find(".content-tabs").html(view.render().$el)
   },

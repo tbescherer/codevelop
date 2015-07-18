@@ -12,6 +12,6 @@ Codevelop.Views.AboutView = Backbone.View.extend({
   },
 
   editSummary: function(event){
-    $(event.currentTarget).html("hello!")
+    $(event.currentTarget).html("hello!");
   }
 })
