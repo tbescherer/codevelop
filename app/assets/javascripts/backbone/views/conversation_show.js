@@ -5,7 +5,7 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
     "submit #send-message": "sendMessage",
   },
 
-  initialize(options){
+  initialize: function(options){
     this.current_user = options.current_user
     this.listenTo(this.model, 'sync', this.render)
   },

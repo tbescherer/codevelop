@@ -1,7 +1,7 @@
 Codevelop.Views.ConversationIndex = Backbone.View.extend({
   template: JST['current_user/conversation_index'],
 
-  initialize(options){
+  initialize: function(options) {
     this.conversations = options.conversations
     this.listenTo(this.conversations, 'sync', this.render)
   },
