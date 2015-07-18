@@ -2,7 +2,7 @@ Codevelop.Views.AboutView = Backbone.View.extend({
   template: JST['current_user/about'],
 
   events: {
-    "click #change-self-summary #change-skills #change-message-if": 'editSummary'
+    "click #change-self-summary": 'editSummary'
   },
 
   render: function() {
