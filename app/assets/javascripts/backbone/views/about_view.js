@@ -2,7 +2,10 @@ Codevelop.Views.AboutView = Backbone.View.extend({
   template: JST['current_user/about'],
 
   events: {
-    "click #change-self-summary": 'editSummary'
+    "click #change-self-summary": 'editSummary',
+    "click #change-skills": 'editSkill',
+    "click #change-message-if": 'editMessageIf',
+    "submit form": 'submitThing',
   },
 
   render: function() {
@@ -12,6 +15,24 @@ Codevelop.Views.AboutView = Backbone.View.extend({
   },
 
   editSummary: function(event){
-    $(event.currentTarget).html("hello!");
+    $(event.currentTarget).parent().html('<form class="about-attribute-form"><input type="textarea" name="user[about_field_one]" value="' + this.model.escape("about_field_one") + '"><button>Submit</button></form>')
+  },
+
+  editSkill: function(event){
+    $(event.currentTarget).parent().html('<form class="about-attribute-form"><input type="textarea" name="user[about_field_two]" value="' + this.model.escape("about_field_two") + '"><button>Submit</button></form>')
+  },
+
+  editMessageIf: function(event){
+    $(event.currentTarget).parent().html('<form class="about-attribute-form"><input type="textarea" name="user[about_field_three]" value="' + this.model.escape("about_field_three") + '"><button>Submit</button></form>')
+  },
+
+  submitThing: function(event){
+    event.preventDefault();
+    var formData = new FormData(event.currentTarget);
+    this.model.saveFormData(formData, {
+      success: function(){
+        Backbone.history.navigate("#/profile", {trigger: true});
+      }
+    });
   }
 })
