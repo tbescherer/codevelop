@@ -4,7 +4,8 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
 
   events: {
     "click #about-button": "aboutView",
-    "click #question-button": "questionView"
+    "click #question-button": "questionView",
+    "click #upload-photo-button": "uploadPhoto"
   },
 
   initialize: function() {
@@ -29,4 +30,8 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
     var view = new Codevelop.Views.QuestionView({model: this.model, question_id: q_id})
     this.$el.find(".content-tabs").html(view.render().$el)
   },
+
+  uploadPhoto: function(){
+    console.log("Hi!");
+  }
 })
