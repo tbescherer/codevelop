@@ -1,19 +1,20 @@
 <section class="backdrop">
   <% if not signed_in? %>
-  <section class="">
+  <section class="sign-in">
+    <a href="session/new" class="btn btn-social btn-codevelop">Sign In</a>
     <p>Have an account?</p>
-    <a href="session/new" class="btn btn-social btn-codevelop">Sign In </a><br>
-    <a class="btn btn-block btn-social btn-github" href="auth/github">Sign in with Github!</a>
   </section>
-  <section class="main">
-    <h1 id="site-title"> Codevelop </h1>
-    <h2>Find a coding pair who isn't bugged by your bugs</h2>
-    <form action="<%= new_user_url %>" method="get">
-      <p>I am: </p>
+  <section class="sign-up-area group">
+    <img src="https://s3.amazonaws.com/codevelopavatarproduction/codeveloplogoupdated.png" id="site-title">
+    <h2 id="tagline">Find a coding pair whose bugs don't bug you.</h2>
+    <form action="<%= new_user_url %>" method="get" class="language-selection-area">
+      <p>I am</p>
       <select class="language-selector" name="language">
         <option value="none">Language Agnostic</option>
         <option value="ruby">A Rubyist</option>
-        <option value="javascript">A javascripter</option>
+        <option value="javascript">A Javascripter</option>
+        <option value="python">A Pythonista</option>
+        <option value="other">Malbolgean</option>
       </select>
       <button>Submit</button>
     </form>

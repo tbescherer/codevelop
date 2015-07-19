@@ -1,0 +1,74 @@
+.sign-in {
+  display: block;
+  float: right;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin: 10px 0px;
+  min-height: 100px;
+  clear: left;
+  width: 100%;
+}
+
+.sign-in > p {
+  display: block;
+  float: right;
+  margin-right: 20px;
+}
+
+.sign-in > a {
+  margin-top: 5px;
+  display: block;
+  float: right;
+}
+
+.btn-codevelop{
+  padding: 10px;
+  border-radius: 5%
+}
+
+.btn-codevelop{
+  color:#D6E1EB;
+  background-color: #114A9E;
+  border: 1px solid #658BBF;
+  width: 60px
+}
+
+.btn-codevelop:hover {
+  background-color: #1f57a3;
+}
+
+.sign-up-area {
+  display: block;
+  float: center;
+}
+
+#site-title {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#tagline {
+  font-size: 36px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.language-selection-area {
+  display: "block";
+  margin: 0 auto;
+  width: 900px
+}
+
+.language-selection-area > p {
+  font-size: 24px;
+}
+
+
+.language-selection-area  select {
+  width: 268px;
+  height: 34px;
+  font-size: 24px;
+  -webkit-appearance: none;
+}
