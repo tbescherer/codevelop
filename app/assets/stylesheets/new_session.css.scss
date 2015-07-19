@@ -32,7 +32,10 @@
 .btn-github:hover{
   color:#fff;
   background-color:#2b2b2b;
-  border: 1px solid #ccc;
+}
+
+#sign-in-area {
+  position: relative;
 }
 
 #sign-in-area label {
@@ -47,14 +50,24 @@
 }
 
 #sign-in-area p {
-  display: block;
-  float: center;
-  margin: 0 auto;
+  margin: 30px auto;
+  display: table;
   text-align: center;
-  padding: 10px 0px;
-  margin: 10px 0px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  padding: 1px 6px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  z-index: 2;
+  background: #114A9E;
+}
+
+#sign-in-area #the-line {
+  position: absolute;
+  content: "";
+  width: 900px;
+  float: left;
+  border-bottom: 1px solid #fff;
+  bottom: 105px;
+  z-index: -1
 }
 
 .btn-submit{
