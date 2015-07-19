@@ -37,7 +37,6 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
 
     var formData = new FormData();
     formData.append("user[avatar]", file);
-    debugger;
     var self = this;
     this.model.saveFormData(formData, {
       success: function(){
