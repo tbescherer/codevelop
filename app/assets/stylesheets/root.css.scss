@@ -96,3 +96,15 @@
   color: #fff;
   border: none;
 }
+
+#dialog-form label, input {
+  display: block;
+}
+
+#dialog-form {
+  background: white;
+}
+
+#dialog-form button {
+  background: #0c0;
+}

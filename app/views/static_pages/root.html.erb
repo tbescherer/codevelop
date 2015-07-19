@@ -16,13 +16,8 @@
         <option value="python">a Pythonista</option>
         <option value="other">a Malbolgean</option>
       </select>
-      <button>Continue</button>
+      <button id="continue-button">Continue</button>
     </form>
-    <script>
-    $(function(){
-      $(".language-selector").selectmenu();
-    })
-    </script>
   </section>
   <% else %>
     You're logged in!
@@ -41,3 +36,5 @@
     <li>links</li>
   </ul>
 </section>
+
+<%= render partial: "dialog_form" %>
