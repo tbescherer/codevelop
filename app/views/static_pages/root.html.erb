@@ -9,15 +9,20 @@
     <h2 id="tagline">Find a coding pair whose bugs don't bug you.</h2>
     <form action="<%= new_user_url %>" method="get" class="language-selection-area">
       <p>I am</p>
-      <select class="language-selector" name="language">
+      <select class="language-selector group" name="language">
         <option value="none">Language Agnostic</option>
         <option value="ruby">A Rubyist</option>
         <option value="javascript">A Javascripter</option>
         <option value="python">A Pythonista</option>
         <option value="other">Malbolgean</option>
       </select>
-      <button>Submit</button>
+      <button>Continue</button>
     </form>
+    <script>
+    $(function(){
+      $(".language-selector").selectmenu();
+    })
+    </script>
   </section>
   <% else %>
     You're logged in!

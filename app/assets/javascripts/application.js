@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/selectmenu 
 //= require serialize_json
 //= require underscore
 //= require backbone

@@ -58,17 +58,40 @@
 .language-selection-area {
   display: "block";
   margin: 0 auto;
-  width: 900px
+  width: 900px;
+  padding-top: 50px;
+  position: relative;
 }
 
 .language-selection-area > p {
   font-size: 24px;
+  display: block;
+  position: relative;
+  float: left;
+  left: 230px;
+  margin: 10px 0px;
 }
 
 
-.language-selection-area  select {
-  width: 268px;
-  height: 34px;
-  font-size: 24px;
-  -webkit-appearance: none;
+.language-selection-area  .ui-selectmenu-button {
+  position: relative;
+  left: 260px;
+  float: left;
+}
+
+.language-selection-area select {
+  width: 280px;
+}
+
+.language-selection-area button {
+  display: block;
+  position: relative;
+  border-radius: 5%;
+  font-size: 20px;
+  float: left;
+  left: 290px;
+  background: #00D280;
+  padding: 10px 40px;
+  color: #fff;
+  border: none;
 }
