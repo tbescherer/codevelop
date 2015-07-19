@@ -32,7 +32,6 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   },
 
   uploadPhoto: function(){
-    console.log("Hi!");
     var file = this.$("#input-user-avatar")[0].files[0];
 
     var formData = new FormData();
