@@ -4,4 +4,5 @@ json.array! @users do |user|
   json.language user.language
   json.answer_choices user.answer_choices
   json.match_score user.match_score(current_user)
+  json.avatar_url user.avatar.url
 end

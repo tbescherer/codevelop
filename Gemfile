@@ -32,6 +32,8 @@ gem 'serialize_json-rails'
 gem 'omniauth-github'
 gem 'figaro'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

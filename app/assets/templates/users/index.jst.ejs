@@ -3,7 +3,7 @@
   <% users.each(function(user) { %>
     <a href="#/users/<%= user.id %>">
       <li class="user-index-block">
-        <img class="user-picture" src="http://placehold.it/280x150">
+        <img class="user-picture" src="<%= user.escape('avatar_url') %>">
         <h3><%= user.escape('username') %></h3>
         <p><%= user.escape('language') %></p>
         <p> <%= user.escape("match_score") %>% Match</p>
