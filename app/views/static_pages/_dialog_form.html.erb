@@ -3,12 +3,13 @@
   <form action="<%= users_url %>" method="post">
     <%= user_auth_token %>
     <label for="username">Username</label>
-    <input type="text" name="user[username]" id="username">
+    <input type="text" name="user[username]" id="username" placeholder="Username">
 
     <label for="email">Email</label>
-    <input type="text" name="user[email]" id="email">
+    <input type="text" name="user[email]" id="email" placeholder="Email">
 
     <label for="password">Password</label>
-    <input type="password" name="user[password]" id="password">
+    <input type="password" name="user[password]" id="password" placeholder="Password">
   </form>
+
 </div>

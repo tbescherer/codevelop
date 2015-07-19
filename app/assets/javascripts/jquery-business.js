@@ -4,7 +4,7 @@ $(function(){
   var dialog = $( "#dialog-form" ).dialog({
     autoOpen: false,
     height: 300,
-    width: 350,
+    width: 300,
     modal: true,
     draggable: false,
     buttons: {
