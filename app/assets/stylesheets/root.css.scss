@@ -23,10 +23,7 @@
 
 .btn-codevelop{
   padding: 10px;
-  border-radius: 5%
-}
-
-.btn-codevelop{
+  border-radius: 5%;
   color:#D6E1EB;
   background-color: #114A9E;
   border: 1px solid #658BBF;
@@ -35,6 +32,7 @@
 
 .btn-codevelop:hover {
   background-color: #1f57a3;
+  border: none;
 }
 
 .sign-up-area {
@@ -95,6 +93,10 @@
   padding: 10px 40px;
   color: #fff;
   border: none;
+}
+
+.language-selectio-area button:hover {
+  background: #48E588
 }
 
 #dialog-form label, input {

@@ -3,10 +3,10 @@ $(function(){
 
   var dialog = $( "#dialog-form" ).dialog({
     autoOpen: false,
-    height: 300,
+    height: 330,
     width: 300,
     modal: true,
-    draggable: false,
+    position: { my: "center", at: "center top", of: ".language-selection-area"},
     buttons: {
       Submit: function() {
         form.append('<input type="hidden" name="user[language]" value="' + $(".language-selector").val() + '">');
