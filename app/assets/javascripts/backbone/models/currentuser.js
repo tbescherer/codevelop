@@ -1,11 +1,11 @@
 Codevelop.Models.CurrentUser = Codevelop.Models.User.extend({
   urlRoot: '/api/current_user',
 
-  saveFormData: function(formData, options){
+  saveFormData: function(formData, options) {
     var model = this;
 
     $.ajax({
-      url: _.result(model, "url"),
+      url: "/api/users/" + model.id,
       type: "PUT",
       data: formData,
       processData: false,

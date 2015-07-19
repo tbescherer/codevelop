@@ -1,6 +1,8 @@
 <section class="face-view">
-  <img class="profile-picture" src="http://placehold.it/280x150">
-  <button id="upload-photo-button">Upload Picture</button>
+  <form>
+    <img class="profile-picture" src="<%= user.escape('avatar_url') %>">
+    <input type="file" name="user[avatar]" id="input-user-avatar">Upload Picture</input>
+  </form>
   <%= user.escape('username') %>
 </section>
 <section class="content-selector-buttons group">

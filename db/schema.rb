@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719010403) do
+ActiveRecord::Schema.define(version: 20150719020600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,11 +65,11 @@ ActiveRecord::Schema.define(version: 20150719010403) do
   add_index "user_answers", ["user_id"], name: "index_user_answers_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                           null: false
-    t.string   "email",                              null: false
-    t.string   "password_digest",                    null: false
-    t.string   "session_token",                      null: false
-    t.string   "language",          default: "none"
+    t.string   "username",                             null: false
+    t.string   "email",                                null: false
+    t.string   "password_digest",                      null: false
+    t.string   "session_token",                        null: false
+    t.string   "language",            default: "none"
     t.string   "uid"
     t.string   "provider"
     t.datetime "created_at"
@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(version: 20150719010403) do
     t.integer  "age"
     t.string   "job"
     t.text     "looking_for"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

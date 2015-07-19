@@ -5,7 +5,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   events: {
     "click #about-button": "aboutView",
     "click #question-button": "questionView",
-    "click #upload-photo-button": "uploadPhoto"
+    "change #input-user-avatar": "uploadPhoto"
   },
 
   initialize: function() {
@@ -33,5 +33,16 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
 
   uploadPhoto: function(){
     console.log("Hi!");
+    var file = this.$("#input-user-avatar")[0].files[0];
+
+    var formData = new FormData();
+    formData.append("user[avatar]", file);
+    debugger;
+    var self = this;
+    this.model.saveFormData(formData, {
+      success: function(){
+        Backbone.history.navigate("#/profile", {trigger: true});
+      }
+    });
   }
 })
