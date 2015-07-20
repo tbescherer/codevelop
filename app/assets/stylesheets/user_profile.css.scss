@@ -21,9 +21,14 @@
 }
 
 .edit-pencil {
-  display: none;
+  display: block;
   width: 16px;
   height: 16px;
+
+}
+
+#profile-edit-pencil {
+  display: none;
   position: absolute;
   cursor: pointer;
   left: 264px;
