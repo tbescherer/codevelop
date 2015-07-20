@@ -24,7 +24,7 @@
   display: block;
   width: 16px;
   height: 16px;
-
+  float: left;
 }
 
 #profile-edit-pencil {
@@ -36,4 +36,25 @@
 
 .prof-section:hover #profile-edit-pencil {
   display: block;
+}
+
+.about-section label {
+  float: left;
+  display: block;
+}
+.about-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 0px;
+}
+
+.about-section p {
+  width: 620px;
+  padding: 20px 0px;
+  display: block;
+  float: left;
+}
+
+.about-section .edit-pencil {
+  margin-left: 10px;
 }
