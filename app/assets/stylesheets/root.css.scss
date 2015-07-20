@@ -13,10 +13,10 @@
   display: block;
   float: right;
   margin-right: 20px;
+  margin-top: 10px;
 }
 
 .sign-in > a {
-  margin-top: 5px;
   display: block;
   float: right;
 }
@@ -67,7 +67,7 @@
   position: relative;
   float: left;
   left: 230px;
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 
 
@@ -76,6 +76,7 @@
   left: 255px;
   float: left;
   background: white;
+  margin-top: 10px;
 }
 
 .language-selection-area select {
@@ -90,12 +91,13 @@
   float: left;
   left: 285px;
   background: #00D280;
-  padding: 10px 40px;
+  padding: 5px 40px;
   color: #fff;
   border: none;
+  margin-top: 5px;
 }
 
-.language-selectio-area button:hover {
+.language-selection-area button:hover {
   background: #48E588
 }
 
@@ -123,4 +125,25 @@
 .ui-dialog-buttonset .ui-button-text {
   background: #00D280;
   color: #fff;
+}
+
+.footer-links {
+   position:fixed;
+   bottom:0px;
+   height:24px;
+   width:100%;
+   background: white;
+   color: black;
+   font-size: 14px;
+}
+
+.footer-links p {
+  float: right;
+  padding-right: 10px;
+  margin: 5px 0px;
+}
+
+.footer-links a {
+  text-decoration: underline;
+  color: #0000EE;
 }
