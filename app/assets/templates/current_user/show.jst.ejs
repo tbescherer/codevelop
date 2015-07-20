@@ -22,9 +22,18 @@
   <div id="details">
     <h3>My details</h3>
     <ul>
-      <li>detail 1</li>
-      <li>detail 2</li>
-      <li>detail 3</li>
+      <li>
+        <label>Age:</label>
+        <p><%= user.escape('age') %></p><button id="change-age" class="edit-button">Edit</button>
+      </li>
+      <li>
+        <label>Job:</label>
+        <p><%= user.escape('job') %></p><button id="change-job" class="edit-button">Edit</button>
+      </li>
+      <li>
+        <label>Looking For:</label>
+        <p><%= user.escape('looking_for') %></p><button id="change-looking" class="edit-button">Edit</button>
+      </li>
     </ul>
   </div>
 </section>

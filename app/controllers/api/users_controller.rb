@@ -23,7 +23,7 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(:avatar, :about_field_one, :about_field_two, :about_field_three)
+      params.require(:user).permit(:avatar, :about_field_one, :about_field_two, :about_field_three, :age, :job, :looking_for)
     end
   end
 end

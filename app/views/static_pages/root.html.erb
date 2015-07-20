@@ -19,6 +19,9 @@
       <button id="continue-button">Continue</button>
     </form>
   </section>
+  <section class="footer-links">
+    <p><a href="http://appacademy.io">App Academy</a> capstone project by <a href="https://tbescherer.github.io">Thomas Bescherer</a></p>
+  </section>
   <% else %>
     You're logged in!
     <section id="menu-bar">
@@ -27,9 +30,6 @@
     <section id="main"></section>
     <script>$(Codevelop.initialize);</script>
   <% end %>
-</section>
-<section class="footer-links">
-  <p><a href="http://appacademy.io">App Academy</a> capstone project by <a href="https://tbescherer.github.io">Thomas Bescherer</a></p>
 </section>
 
 <%= render partial: "dialog_form" %>
