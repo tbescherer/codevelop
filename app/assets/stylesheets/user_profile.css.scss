@@ -39,8 +39,10 @@
 }
 
 .about-section label {
+  font-weight: bold;
   float: left;
   display: block;
+  font-size: 20px;
 }
 .about-section h3 {
   font-size: 24px;
@@ -126,4 +128,18 @@
   display: block;
   float: left;
   padding-left: 30px
+}
+
+#start-convo {
+  background: #313740;
+  padding: 10px 30px;
+  border-radius: 5%;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#start-convo:hover {
+  background: #3C444E
 }

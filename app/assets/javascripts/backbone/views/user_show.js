@@ -1,5 +1,5 @@
 Codevelop.Views.UserShow = Backbone.View.extend({
-  className: "group",
+  className: "group profile",
   template: JST['users/show'],
 
   events: {

@@ -23,7 +23,10 @@
     <p><a href="http://appacademy.io">App Academy</a> capstone project by <a href="https://tbescherer.github.io">Thomas Bescherer</a></p>
   </section>
   <% else %>
-    You're logged in!
+    <div id="current-user-info">
+       <img id="face-thumb" src="<%= current_user.avatar.url %>"/>
+       <p><%= current_user.username %></p>
+    </div>
     <section id="menu-bar">
     <%= render partial: "menu" %>
     </section>

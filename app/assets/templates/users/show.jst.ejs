@@ -1,7 +1,9 @@
-<section class="face-view">
-  <img class="profile-picture" src="<%= user.escape('avatar_url') %>">
-  <%=user.escape('username')%>
-  <%=user.escape('match_score')%>% match
+<section class="face-view group">
+  <div class="prof-section group">
+    <img class="profile-picture" src="<%= user.escape('avatar_url') %>">
+  </div>
+  <h1 id="username"><%= user.escape('username') %></h1>
+  <h1 id="facts"><%=user.escape('age')%> | <%=user.escape('language')%> | <%=user.escape('match_score')%>% match</h1>
   <button id="start-convo">Send a message!</button>
 </section>
 <section class="content-selector-buttons group">
@@ -12,8 +14,8 @@
 </section>
 <section class="content-tabs group"></section>
 <section class="self-facts-view group">
-  <div id="looking-for">
-    <h3>I'm looking For</h3>
+  <div id="language">
+    <h3>I Program in:</h3>
       <ul>
         <li><%=user.escape('language')%></li>
       </ul>
@@ -21,15 +23,15 @@
   <div id="details">
     <h3>My details</h3>
     <ul>
-      <li>
+      <li class="group">
         <label>Age:</label>
         <p><%= user.escape('age') %></p>
       </li>
-      <li>
+      <li class="group">
         <label>Job:</label>
         <p><%= user.escape('job') %></p>
       </li>
-      <li>
+      <li class="group">
         <label>Looking For:</label>
         <p><%= user.escape('looking_for') %></p>
       </li>
