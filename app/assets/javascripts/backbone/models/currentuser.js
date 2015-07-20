@@ -19,5 +19,6 @@ Codevelop.Models.CurrentUser = Codevelop.Models.User.extend({
         options.error && options.error(model, resp, options);
       }
     });
-  }
+  },
+
 });

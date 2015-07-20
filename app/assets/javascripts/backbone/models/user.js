@@ -15,4 +15,12 @@ Codevelop.Models.User = Backbone.Model.extend({
     }
     return this._answeredQuestions;
   },
+
+  notMe: function(userOne, userTwo) {
+    if (userOne.id === this.id) {
+      return userTwo
+    } else {
+      return userOne
+    }
+  }
 })

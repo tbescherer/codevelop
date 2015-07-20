@@ -15,7 +15,7 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.current_user = options.current_user
+    this.currentUser = options.currentUser
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -37,6 +37,6 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   },
 
   startConvo: function() {
-    var conversation = Codevelop.Collections.conversations.findOrCreate(this.current_user.id, this.model.id)
+    var conversation = Codevelop.Collections.conversations.findOrCreate(this.currentUser.id, this.model.id)
   }
 })

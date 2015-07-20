@@ -3,11 +3,11 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
 
   initialize: function(options) {
     this.listenTo(this.collection, 'sync', this.render),
-    this.current_user = options.current_user
+    this.currentUser = options.currentUser
   },
 
   render: function() {
-    var content = this.template({users: this.collection, current_user: this.current_user});
+    var content = this.template({users: this.collection, currentUser: this.currenUser});
     this.$el.html(content)
     return this;
   }

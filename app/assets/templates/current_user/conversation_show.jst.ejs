@@ -1,6 +1,5 @@
-<h1> Hello from message show!</h1>
 <% if (conversation.get("user_one") !== undefined) { %>
-<p>Conversation between <%= conversation.get("user_one").username %> and <%= conversation.get("user_two").username %> </p>
+<h1> Conversation with <%=currentUser.notMe(conversation.get("user_one"), conversation.get("user_two")).username%> </h1>
 <ul>
   <% conversation.replies().each(function(reply) { %>
     <li><%= reply.get("user").username %>: <%= reply.get("body") %></li>

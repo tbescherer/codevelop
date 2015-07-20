@@ -20,14 +20,14 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   index: function() {
     this.users.fetch();
     var view = new Codevelop.Views.UsersIndex({
-      collection: this.users, current_user: this.currentUser
+      collection: this.users, currentUser: this.currentUser
     })
     this._swapView(view);
   },
 
   userShow: function(id) {
     var user = this.users.getOrFetch(id)
-    var view = new Codevelop.Views.UserShow({model: user, current_user: this.currentUser})
+    var view = new Codevelop.Views.UserShow({model: user, currentUser: this.currentUser})
     this._swapView(view);
   },
 
@@ -43,7 +43,7 @@ Codevelop.Routers.Router = Backbone.Router.extend({
 
   conversationShow: function (id) {
     var conversation = this.conversations.getOrFetch(id);
-    var view = new Codevelop.Views.ConversationShow({model: conversation, current_user: this.currentUser})
+    var view = new Codevelop.Views.ConversationShow({model: conversation, currentUser: this.currentUser})
     this._swapView(view);
   },
 

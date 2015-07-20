@@ -6,12 +6,12 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   },
 
   initialize: function(options){
-    this.current_user = options.current_user
+    this.currentUser = options.currentUser
     this.listenTo(this.model, 'sync', this.render)
   },
 
   render: function() {
-    var content = this.template({conversation: this.model, current_user: this.current_user});
+    var content = this.template({conversation: this.model, currentUser: this.currentUser});
     this.$el.html(content);
     return this;
   },
@@ -21,7 +21,7 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
     event.preventDefault();
     var attrs = $(event.currentTarget).serializeJSON()["conversation_reply"];
     attrs.conv_id = this.model.id
-    attrs.user = {username: this.current_user.get("username")}
+    attrs.user = {username: this.currentUser.get("username")}
     var message = new Codevelop.Models.ConversationReply();
     message.save(attrs, {
       success: function(model){
