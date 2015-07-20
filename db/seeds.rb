@@ -22,6 +22,20 @@ users = []
   )
 end
 
+User.create(
+  username: "guest_user",
+  email: "guest@example.com",
+  password: "password",
+  language: Faker::Hacker.noun,
+  about_field_one: Faker::Hacker.say_something_smart,
+  about_field_two: Faker::Hacker.say_something_smart,
+  about_field_three: Faker::Hacker.say_something_smart,
+  job: "Dev at #{Faker::App.name}",
+  age: Faker::Number.number(2),
+  looking_for: Faker::Hacker.noun,
+  avatar: Faker::Avatar.image
+)
+
 choices = ["Yes", "No", "Now and Again"]
 20.times do |i|
   options = []

@@ -1,6 +1,5 @@
 .sign-in {
   display: block;
-  float: right;
   padding-right: 20px;
   padding-top: 20px;
   margin: 10px 0px;
@@ -9,14 +8,19 @@
   width: 100%;
 }
 
-.sign-in > p {
+.sign-in div {
+  display: block;
+  padding-right: 10px;
+}
+
+.sign-in p {
   display: block;
   float: right;
   margin-right: 20px;
   margin-top: 10px;
 }
 
-.sign-in > a {
+.sign-in a {
   display: block;
   float: right;
 }
@@ -181,4 +185,26 @@
 
 #codevelop-button {
   float: left;
+}
+
+#demo-button-land .demo-user-submit {
+  display: block;
+  float: right;
+  padding: 10px;
+  border-radius: 5%;
+  color:#D6E1EB;
+  background-color: #114A9E;
+  border: 1px solid #658BBF;
+  width: 80px;
+  font-size: 12px;
+}
+
+#demo-button-land .demo-user-submit:hover {
+  background-color: #1f57a3;
+  border: none;
+}
+
+#demo-button-land {
+  display: block;
+  padding-right: 10px;
 }

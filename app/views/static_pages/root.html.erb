@@ -1,9 +1,13 @@
 <section class="backdrop">
   <% if not signed_in? %>
   <section class="sign-in">
-    <a href="session/new" class="btn btn-social btn-codevelop">Sign In</a>
-    <p>Have an account?</p>
+    <div class="group">
+      <a href="session/new" class="btn btn-social btn-codevelop">Sign In</a>
+      <p>Have an account?</p>
+    </div>
+    <%= render partial: "demo_user" %>
   </section>
+
   <section class="sign-up-area group">
     <img src="https://s3.amazonaws.com/codevelopavatarproduction/codeveloplogoupdated.png" id="site-title">
     <h2 id="tagline">Find a coding pair whose bugs don't bug you.</h2>
