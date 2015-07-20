@@ -7,7 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 users = []
 30.times do
-  users << User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", language: Faker::Hacker.noun)
+  users << User.create(
+  username: Faker::Internet.user_name,
+  email: Faker::Internet.email,
+  password: "password",
+  language: Faker::Hacker.noun,
+  about_field_one: Faker::Hacker.say_something_smart,
+  about_field_two: Faker::Hacker.say_something_smart,
+  about_field_three: Faker::Hacker.say_something_smart,
+  job: "Dev at #{Faker::App.name}",
+  age: Faker::Number.number(2),
+  looking_for: Faker::Hacker.noun,
+  avatar: Faker::Avatar.image
+  )
 end
 
 choices = ["Yes", "No", "Now and Again"]
