@@ -17,7 +17,6 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   },
 
   sendMessage: function(event){
-    console.log("sending message")
     event.preventDefault();
     var attrs = $(event.currentTarget).serializeJSON()["conversation_reply"];
     attrs.conv_id = this.model.id
