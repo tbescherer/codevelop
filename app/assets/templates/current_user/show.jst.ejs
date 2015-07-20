@@ -1,4 +1,4 @@
-<section class="face-view">
+<section class="face-view group">
   <form>
     <div class="prof-section">
       <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil" id="profile-edit-pencil">
@@ -6,7 +6,7 @@
     </div>
     <input type="file" name="user[avatar]" id="input-user-avatar"/>
   </form>
-  <%= user.escape('username') %>
+  <h1 id="username"><%= user.escape('username') %></h1>
 </section>
 <section class="content-selector-buttons group">
   <ul class="tabs" data-content-tabs="#content-tabs">
@@ -17,7 +17,7 @@
 <section class="content-tabs group"></section>
 <section class="self-facts-view group">
   <div id="looking-for">
-    <h3>I'm looking For</h3>
+    <h3>I program in:</h3>
       <ul>
         <li><%=user.escape('language')%></li>
       </ul>

@@ -1,5 +1,5 @@
 Codevelop.Views.AboutView = Backbone.View.extend({
-  className: "about-section",
+  className: "about-section group",
   template: function() {
     if(this.isMe) {
       return JST['current_user/about']

@@ -1,20 +1,20 @@
 <h3>About</h3>
 
-<section id="self-summary" class="about-box">
+<section id="self-summary" class="about-box group">
   <label>Self Summary</label>
   <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil" id="change-self-summary">
   <p><%= user.escape("about_field_one") || "Write a short summary of yourself!" %></p>
 </section>
 
 
-<section id="skills" class="about-box">
+<section id="skills" class="about-box group">
   <label>Skills</label>
   <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil" id="change-skills">
   <p><%= user.escape("about_field_two") || "What are you good at?"%></p>
 </section>
 
 
-<section id="message-if" class="about-box">
+<section id="message-if" class="about-box group">
   <label>Message me if</label>
   <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil" id="change-message-if">
   <p><%= user.escape("about_field_three") || "Explain your interests." %></p>

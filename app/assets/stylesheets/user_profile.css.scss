@@ -65,3 +65,28 @@
   display: inline-block;
   text-align: left;
 }
+
+.about-section button {
+  display: block;
+  position: relative;
+}
+
+.prof-section {
+  display: block;
+  float: left;
+}
+
+.face-view #username {
+  display: block;
+  font-size: 36px;
+  float: left;
+  position: relative;
+  bottom: -114px;
+  padding-left: 20px;
+}
+
+.self-facts-view h3 {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px 0px;
+}
