@@ -20,7 +20,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   },
 
   aboutView: function() {
-    var view = new Codevelop.Views.AboutView({model: this.model})
+    var view = new Codevelop.Views.AboutView({model: this.model, isMe: true})
     this.$el.find(".content-tabs").html(view.render().$el)
   },
 

@@ -1,5 +1,11 @@
 Codevelop.Views.AboutView = Backbone.View.extend({
-  template: JST['current_user/about'],
+  template: function() {
+    if(this.isMe) {
+      return JST['current_user/about']
+    } else {
+      return JST['users/about']
+    }
+  },
 
   events: {
     "click #change-self-summary": 'editSummary',
@@ -8,8 +14,12 @@ Codevelop.Views.AboutView = Backbone.View.extend({
     "submit form": 'submitThing',
   },
 
+  initialize: function(options) {
+    this.isMe = options.isMe
+  },
+
   render: function() {
-    var content = this.template({user: this.model});
+    var content = this.template()({user: this.model});
     this.$el.html(content);
     return this;
   },

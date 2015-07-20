@@ -1,0 +1,16 @@
+About
+
+<label>Self Summary</label>
+<section id="self-summary" class="about-box">
+<p><%= user.escape("about_field_one") || "They haven\'t filled this in yet!" %></p>
+</section>
+
+<label>Skills</label>
+<section id="skills" class="about-box">
+<p><%= user.escape("about_field_two") || "They haven\'t filled this in yet!"%></p>
+</section>
+
+<label>Message me if</label>
+<section id="message-if" class="about-box">
+<p><%= user.escape("about_field_three") || "They haven\'t filled this in yet!" %></p>
+</section>
