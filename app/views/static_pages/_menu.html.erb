@@ -1,12 +1,19 @@
-<form action="<%= session_url%>" method="post">
-  <%= user_auth_token %>
-  <input type="hidden" name="_method" value="DELETE">
-  <button>Sign Out</button>
-</form>
-
-<a class="menu-button" id="codevelop-button" href="">
-  <img id="logo-home-link" src="https://s3.amazonaws.com/codevelopavatarproduction/codeveloplogoupdated.png">
-</a>
-<a class="menu-button" href="">Browse Matches</a>
-<a class="menu-button" href="#/profile">Profile</a>
-<a class="menu-button" href="#/messages">Messages</a>
+<div id="misc-buttons">
+  <a class="group" id="codevelop-button" href="">
+    <img id="logo-home-link" src="https://s3.amazonaws.com/codevelopavatarproduction/codeveloplogoupdated.png">
+  </a>
+  <a class="menu-button" href="">Browse Matches</a>
+  <a class="menu-button" href="#/profile">Profile</a>
+  <a class="menu-button" href="#/messages">Messages</a>
+</div>
+<div id="sign-out">
+  <form action="<%= session_url%>" method="post">
+    <%= user_auth_token %>
+    <input type="hidden" name="_method" value="DELETE">
+    <button>Sign Out</button>
+  </form>
+</div>
+<div id="current-user-info">
+   <img id="face-thumb" src="<%= current_user.avatar.url %>"/>
+   <p><%= current_user.username %></p>
+</div>

@@ -145,8 +145,8 @@
 }
 
 #face-thumb {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -156,4 +156,29 @@
   float: right;
   display: block;
   padding-right: 30px;
+}
+
+#misc-buttons {
+  float: left;
+}
+
+#menu-bar {
+  margin: 0px;
+}
+
+#misc-buttons .menu-button {
+  font-size: 18px;
+  padding-left: 20px;
+  padding-top: 20px;
+  display: block;
+  float: left;
+}
+
+#sign-out {
+  float: right;
+  display: block;
+}
+
+#codevelop-button {
+  float: left;
 }

@@ -2,11 +2,15 @@
 <ul>
 <% conversations.each(function(conversation){ %>
   <% if (conversation.get("user_one") !== undefined && !(conversation.replies().length === 0)) { %>
-  <a href="#/messages/<%= conversation.id %>">
-    <li><p>Conversation between <%= conversation.get("user_one").username %> and <%= conversation.get("user_two").username %> </p>
-      <p><%= conversation.replies().first().get("user").username %>: <%= conversation.replies().first().get("body") %> </p>
+
+    <li>
+      <img id="img-thumbnail"src="<%= conversation.replies().first().get("user_avatar_url") %>">
+      <a href="#/messages/<%= conversation.id %>">
+        <p>Conversation between <%= conversation.get("user_one").username %> and <%= conversation.get("user_two").username %> </p>
+        <p><%= conversation.replies().first().get("user").username %>: <%= conversation.replies().first().get("body") %> </p>
+      </a>
     </li>
-  </a>
+
   <% } %>
 <% }) %>
 </ul>

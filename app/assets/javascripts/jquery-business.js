@@ -36,5 +36,4 @@ $(function(){
       dialog.dialog( "close" )
     }
   });
-
 })
