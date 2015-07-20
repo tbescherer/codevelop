@@ -7,6 +7,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
     "click #question-button": "questionView",
     "change #input-user-avatar": "uploadPhoto",
     "click #change-details": "editDetails",
+    "click #change-language": "editLanguage",
     "submit .detail-form": "submitThing"
   },
 
@@ -48,6 +49,10 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
 
   editDetails: function(event) {
     $(event.currentTarget).parent().html('<form class="detail-form"><label>Age:</label><input type="text" name="user[age]" value="' + this.model.escape("age") + '"><label>Job:</label><input type="text" name="user[job]" value="' + this.model.escape("job") + '"><label>Looking for:</label><input type="text" name="user[looking_for]" value="' + this.model.escape("looking_for") + '"><button>Submit</button></form>')
+  },
+
+  editLanguage: function(event) {
+    $(event.currentTarget).parent().html('<form class="detail-form"><input type="text" name="user[language]" value="' + this.model.escape("language") + '"><button>Submit</button></form>')
   },
 
   submitThing: function(event){

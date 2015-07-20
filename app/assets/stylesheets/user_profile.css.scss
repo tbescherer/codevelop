@@ -81,12 +81,49 @@
   font-size: 36px;
   float: left;
   position: relative;
-  bottom: -114px;
+  bottom: -90px;
   padding-left: 20px;
+}
+
+.face-view #facts {
+  display: block;
+  font-size: 16px;
+  float: left;
+  position: relative;
+  bottom: -126px;
+  left: -170px;
 }
 
 .self-facts-view h3 {
   font-size: 24px;
   font-weight: bold;
   padding: 20px 0px;
+  display: block;
+  width: 230px;
+  float: left;
+}
+
+.self-facts-view .edit-pencil {
+  float: left;
+  padding: 27px 0px;
+}
+
+#details ul {
+  border-top: 1px solid #ccc;
+}
+#details li {
+  border-bottom: 1px solid #ccc;
+  display: block;
+  padding: 10px 0px;
+}
+
+#details label {
+  display: block;
+  float: left;
+}
+
+#details p {
+  display: block;
+  float: left;
+  padding-left: 30px
 }

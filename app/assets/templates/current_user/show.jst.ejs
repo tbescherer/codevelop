@@ -7,6 +7,7 @@
     <input type="file" name="user[avatar]" id="input-user-avatar"/>
   </form>
   <h1 id="username"><%= user.escape('username') %></h1>
+  <h1 id="facts"><%=user.escape('age')%> | <%=user.escape('language')%></h1>
 </section>
 <section class="content-selector-buttons group">
   <ul class="tabs" data-content-tabs="#content-tabs">
@@ -16,25 +17,29 @@
 </section>
 <section class="content-tabs group"></section>
 <section class="self-facts-view group">
-  <div id="looking-for">
+  <div id="language" class="group">
     <h3>I program in:</h3>
+    <div>
+    <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil edit-button" id="change-language">
       <ul>
         <li><%=user.escape('language')%></li>
       </ul>
+    </div>
   </div>
-  <h3>My details</h3>
+
   <div id="details">
+    <h3>My details</h3>
     <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil edit-button" id="change-details">
     <ul>
-      <li>
+      <li class="group">
         <label>Age:</label>
         <p><%= user.escape('age') %></p>
       </li>
-      <li>
+      <li class="group">
         <label>Job:</label>
         <p><%= user.escape('job') %></p>
       </li>
-      <li>
+      <li class="group">
         <label>Looking For:</label>
         <p><%= user.escape('looking_for') %></p>
       </li>
