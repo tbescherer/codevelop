@@ -9,5 +9,6 @@ json.array! @conversations do |conversation|
     json.user_id reply.user_id
     json.user User.find(reply.user_id)
     json.user_avatar_url User.find(reply.user_id).avatar.url
+    json.time reply.updated_at
   end
 end
