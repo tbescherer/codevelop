@@ -1,0 +1,34 @@
+.profile {
+  padding: 40px 20px;
+}
+
+.profile #input-user-avatar {
+  position: absolute;
+}
+
+.prof-section {
+  display: block;
+  width: 280px;
+  position: relative;
+}
+
+.prof-section .profile-picture {
+  display: block;
+}
+
+#input-user-avatar {
+  display: none;
+}
+
+.edit-pencil {
+  display: none;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  cursor: pointer;
+  left: 264px;
+}
+
+.prof-section:hover #profile-edit-pencil {
+  display: block;
+}

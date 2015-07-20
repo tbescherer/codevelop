@@ -1,7 +1,10 @@
 <section class="face-view">
   <form>
-    <img class="profile-picture" src="<%= user.escape('avatar_url') %>">
-    <input type="file" name="user[avatar]" id="input-user-avatar">Upload Picture</input>
+    <div class="prof-section">
+      <img src="https://s3.amazonaws.com/codevelopavatarproduction/edit_profile_icon.png" class="edit-pencil" id="profile-edit-pencil">
+      <img class="profile-picture" src="<%= user.escape('avatar_url') %>">
+    </div>
+    <input type="file" name="user[avatar]" id="input-user-avatar"/>
   </form>
   <%= user.escape('username') %>
 </section>
@@ -37,3 +40,8 @@
     </ul>
   </div>
 </section>
+<script>
+  $(".prof-section").click( function() {
+    $("#input-user-avatar").trigger('click');
+  });
+</script>
