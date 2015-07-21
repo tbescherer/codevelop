@@ -41,6 +41,7 @@
 
 .about-section {
   margin-top: 20px;
+  width: 90%;
 }
 .about-section label {
   font-weight: bold;
@@ -55,10 +56,14 @@
 }
 
 .about-section p {
-  width: 620px;
+  width: 100%;
   padding: 20px 0px;
   display: block;
   float: left;
+}
+
+.about-section label {
+  display: block;
 }
 
 .about-section .edit-pencil {
@@ -163,4 +168,20 @@
   margin: 0px;
   margin-left: 10px;
   width: 150px;
+}
+
+.content-selector-buttons {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content-selector-buttons button{
+  border: none;
+  background: none;
+  font-size: 18px;
+}
+
+.content-selector-buttons button.active {
+  color: #1f57a3;
+  border-bottom: 3px solid #1f57a3;
 }
