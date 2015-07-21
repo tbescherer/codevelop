@@ -53,5 +53,10 @@
 
 #send-message button:hover {
   background-color: #48E588;
+}
 
+.conversation-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 700px;
 }

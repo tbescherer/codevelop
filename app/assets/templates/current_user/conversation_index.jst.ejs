@@ -1,6 +1,6 @@
 
 <h1>Messages</h1>
-<ul>
+<ul class="conversation-list">
 <% conversations.each(function(conversation){ %>
   <% if (conversation.get("user_one") !== undefined && !(conversation.replies().length === 0)) { %>
     <% var otherPerson = user.notMe(conversation.get("user_one"), conversation.get("user_two")) %>
