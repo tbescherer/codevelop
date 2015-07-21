@@ -1,18 +1,30 @@
-<h1>Question stuff</h1>
-<%= question.escape("body") %>
+
+<h1><%= question.escape("body") %></h1>
 
 <form id="user-answer">
-<% answers.forEach(function(answer){ %>
-  <input type="radio" name="user_answer[answer_choice_id]" value="<%=answer.id%>"><%=answer.escape("body")%></input>
-<% }) %>
+<div class="question-answers">
 
-<label for="weight">Importance</label>
-  <input type="radio" name="user_answer[weight]" value="1">A little</input>
-  <input type="radio" name="user_answer[weight]" value="10">Somewhat</input>
-  <input type="radio" name="user_answer[weight]" value="250">Very</input>
+  <% answers.forEach(function(answer){ %>
 
-  <label for="optional_text">Explain your answer.</label>
-  <textarea id="optional_text" name="user_answer[explanation]"></textarea>
+    <input id="<%=answer.escape("body")%>" class="answer" type="radio" name="user_answer[answer_choice_id]" value="<%=answer.id%>">
+    <label for="<%=answer.escape("body")%>"><%=answer.escape("body")%></label>
+  <% }) %>
+</div>
+<div class="question-weights">
+  <h3>Importance</h3>
+  <input id="little" class="answer" type="radio" name="user_answer[weight]" value="1">
+  <label for="little">A Little</label>
+  <input id="somewhat" class="answer" type="radio" name="user_answer[weight]" value="10">
+  <label for="somewhat">Somewhat</label>
+  <input id="very" class="answer" type="radio" name="user_answer[weight]" value="250">
+  <label for="very">Very</label>
+</div>
+<div class="optional-text-area">
+  <h3>Explain your answer.</h3>
+  <textarea id="optional-text" name="user_answer[explanation]"></textarea>
+</div>
+<div class="question-submit-buttons">
   <button class="submit-question">Answer</button>
   <button class="skip-question">Skip Question</button>
+</div>
 </form>

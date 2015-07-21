@@ -1,6 +1,8 @@
 Codevelop.Views.QuestionView = Backbone.View.extend({
   template: JST['current_user/questions'],
 
+  className: "questions",
+
   events: {
     "submit #user-answer": "submitUserAnswer",
     "click .skip-question": "skipQuestion"
