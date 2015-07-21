@@ -15,6 +15,10 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
   },
 
   render: function() {
+    if (this.question_id > 20) {
+      this.$el.html("You answered all the questions")
+      return this;
+    }
     var question = Codevelop.Collections.questions.getOrFetch(this.question_id);
     var content = this.template({user: this.model, question: question, answers: question.answerChoices()});
     this.$el.html(content);
