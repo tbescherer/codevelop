@@ -50,4 +50,9 @@
   $(".prof-section").click( function() {
     $("#input-user-avatar").trigger('click');
   });
+
+  $(".content-selector-buttons button").click( function(event) {
+    $(".content-selector-buttons button").removeClass("active");
+    $(event.currentTarget).addClass("active");
+  })
 </script>

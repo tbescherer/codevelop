@@ -40,3 +40,9 @@
     </ul>
   </div>
 </section>
+<script>
+$(".content-selector-buttons button").click( function(event) {
+  $(".content-selector-buttons button").removeClass("active");
+  $(event.currentTarget).addClass("active");
+})
+</script>
