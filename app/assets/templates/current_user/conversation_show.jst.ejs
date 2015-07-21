@@ -1,5 +1,9 @@
 <% if (conversation.get("user_one") !== undefined) { %>
-<h1> Conversation with <%=currentUser.notMe(conversation.get("user_one"), conversation.get("user_two")).username%> </h1>
+<% var otherPerson = currentUser.notMe(conversation.get("user_one"), conversation.get("user_two")) %>
+<div class="mini-profile">
+  <img id="face-thumb" src="<%= conversation.get("user_one_avatar_url") %>"/>
+  <h3><%= otherPerson.username%></h3>
+</div>
 <ul>
   <% conversation.replies().each(function(reply) { %>
     <li><%= reply.get("user").username %>: <%= reply.get("body") %></li>
@@ -11,3 +15,4 @@
   <textarea name="conversation_reply[body]" id="body"></textarea>
   <button>Send</button>
 </form>
+<a href="#/messages">Back to Conversation Index</a>

@@ -1,13 +1,15 @@
 Codevelop.Views.ConversationShow = Backbone.View.extend({
   template: JST['current_user/conversation_show'],
 
+  className: "conversation-area",
+
   events: {
     "submit #send-message": "sendMessage",
   },
 
   initialize: function(options){
-    this.currentUser = options.currentUser
-    this.listenTo(this.model, 'sync', this.render)
+    this.currentUser = options.currentUser;
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function() {

@@ -14,5 +14,5 @@ Codevelop.Models.Conversation = Backbone.Model.extend({
     }
 
     return this._replies;
-  },
+  }
 });
