@@ -6,7 +6,7 @@ module Api
     end
 
     def index
-      @conversations = current_user.conversations
+      @conversations = current_user.conversations.includes(:replies)
       render :index
     end
 

@@ -43,6 +43,7 @@ Codevelop.Views.QuestionView = Backbone.View.extend({
     userAnswer.save(attrs, {
       success: function() {
         this.model.answered_questions().add(userAnswer)
+        this.question_id++
         this.render();
       }.bind(this)
     })
