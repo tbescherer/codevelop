@@ -74,13 +74,36 @@
 .about-section input {
   width: 580px;
   float: left;
-  display: inline-block;
+  display: block;
   text-align: left;
+}
+
+.about-input {
+  margin: 0;
+  display: block;
 }
 
 .about-section button {
   display: block;
-  position: relative;
+  float: left;
+  background: #114A9E;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 10px 0px;
+}
+
+.self-facts-view button{
+  background: #114A9E;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-bottom: 1px;
 }
 
 .prof-section {
@@ -158,7 +181,7 @@
 }
 
 .about-box input {
-  margin: 20px 0px;
+  margin-top: 20px;
   font-size: 16px;
 }
 
