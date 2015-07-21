@@ -1,5 +1,7 @@
 json.array! @conversations do |conversation|
   json.id conversation.id
+  json.user_one_id conversation.user_one_id
+  json.user_two_id conversation.user_two_id
   json.user_one do
     json.username User.find(conversation.user_one_id).username
     json.id User.find(conversation.user_one_id).id
@@ -19,7 +21,7 @@ json.array! @conversations do |conversation|
     json.avatar_url User.find(conversation.user_two_id).avatar.url
     json.match_score User.find(conversation.user_two_id).match_score(current_user)
   end
-  
+
   json.replies conversation.replies.order('created_at DESC') do |reply|
     json.body reply.body
     json.user_id reply.user_id
