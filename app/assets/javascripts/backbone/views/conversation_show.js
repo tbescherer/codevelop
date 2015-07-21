@@ -13,6 +13,7 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   },
 
   render: function() {
+    debugger
     var content = this.template({conversation: this.model, currentUser: this.currentUser});
     this.$el.html(content);
     return this;

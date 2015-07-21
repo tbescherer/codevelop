@@ -2,6 +2,28 @@
   padding: 20px;
 }
 
-.conversation-area h1 {
+.mini-profile {
   font-size: 24px;
+  display: block;
+  background: #fff;
+}
+
+.mini-profile .face-thumb {
+  width: 70px;
+  height: 70px;
+  display: block;
+  float: left;
+  padding: 10px
+}
+
+.mini-profile h3 {
+  padding-top: 30px;
+}
+
+.mini-profile #personal-facts {
+  font-size: 14px;
+}
+.conversation-area ul {
+  display: block;
+  padding: 20px;
 }
