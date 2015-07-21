@@ -37,6 +37,7 @@ Codevelop.Routers.Router = Backbone.Router.extend({
   },
 
   conversationIndex: function () {
+    this.conversations.fetch()
     var view = new Codevelop.Views.ConversationIndex({model: this.currentUser, conversations: this.conversations})
     this._swapView(view);
   },

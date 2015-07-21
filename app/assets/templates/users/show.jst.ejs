@@ -4,7 +4,9 @@
   </div>
   <h1 id="username"><%= user.escape('username') %></h1>
   <h1 id="facts"><%=user.escape('age')%> | <%=user.escape('language')%> | <%=user.escape('match_score')%>% match</h1>
+  <% if (user.id) { %>
   <button id="start-convo">Send a message!</button>
+  <% } %>
 </section>
 <section class="content-selector-buttons group">
   <ul class="tabs" data-content-tabs="#content-tabs">
