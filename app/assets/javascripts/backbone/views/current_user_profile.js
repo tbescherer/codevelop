@@ -48,7 +48,7 @@ Codevelop.Views.CurrentUserProfile = Backbone.CompositeView.extend({
   },
 
   editDetails: function(event) {
-    $(event.currentTarget).parent().html('<form class="detail-form"><label>Age:</label><input type="text" name="user[age]" value="' + this.model.escape("age") + '"><label>Job:</label><input type="text" name="user[job]" value="' + this.model.escape("job") + '"><label>Looking for:</label><input type="text" name="user[looking_for]" value="' + this.model.escape("looking_for") + '"><button>Submit</button></form>')
+    $(event.currentTarget).parent().html('<h3>My details</h3><form class="detail-form"><ul><li class="group"><label>Age:</label><input type="text" name="user[age]" value="' + this.model.escape("age") + '"></li><li class="group"><label>Job:</label><input type="text" name="user[job]" value="' + this.model.escape("job") + '"></li><li class="group"><label>Looking for:</label><input type="text" name="user[looking_for]" value="' + this.model.escape("looking_for") + '"></li></ul><button>Submit</button></form>')
   },
 
   editLanguage: function(event) {
