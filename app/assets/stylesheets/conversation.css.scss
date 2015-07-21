@@ -27,3 +27,31 @@
   display: block;
   padding: 20px;
 }
+
+.conversation-reply-list {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+#send-message textarea {
+  width: 85%;
+  resize: none;
+  padding-right: 20px;
+  margin-left: 20px;
+}
+
+#send-message button {
+  display: block;
+  float: right;
+  padding: 10px;
+  border-radius: 5%;
+  border: none;
+  color: #fff;
+  background-color: #00D280;
+  width:10%
+}
+
+#send-message button:hover {
+  background-color: #48E588;
+
+}

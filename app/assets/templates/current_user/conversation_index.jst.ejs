@@ -5,11 +5,11 @@
   <% if (conversation.get("user_one") !== undefined && !(conversation.replies().length === 0)) { %>
     <% var otherPerson = user.notMe(conversation.get("user_one"), conversation.get("user_two")) %>
     <li class="conversation-box">
-      <img id="img-thumbnail" src="<%= conversation.replies().first().get("user_avatar_url")%>">
+      <img id="img-thumbnail" src="<%= otherPerson.avatar_url%>">
       <a href="#/messages/<%= conversation.id %>" class="group">
         <p>Conversation with <%=otherPerson.username%> </p>
         <p><%= conversation.replies().first().get("user").username %>: <%= conversation.replies().first().get("body") %> </p>
-        <p>Received at: <%= conversation.replies().first().get("time") %></p>
+        <p>Sent at: <%= conversation.replies().first().get("time") %></p>
       </a>
     </li>
 

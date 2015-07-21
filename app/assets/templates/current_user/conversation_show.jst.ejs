@@ -5,15 +5,16 @@
   <h3><%= otherPerson.username%></h3>
   <p id="personal-facts"><%=otherPerson.age%> | <%=otherPerson.language%> | <%=otherPerson.match_score%>% match</h1>
 </div>
-<ul>
+<ul class="conversation-reply-list">
   <% conversation.replies().each(function(reply) { %>
     <li><%= reply.get("user").username %>: <%= reply.get("body") %></li>
   <% }) %>
 </ul>
 <% } %>
 <form id="send-message">
-  <label for="body">Send a Message</label>
   <textarea name="conversation_reply[body]" id="body"></textarea>
   <button>Send</button>
 </form>
-<a href="#/messages">Back to Conversation Index</a>
+<script>
+  $(".conversation-reply-list").scrollTop($(".conversation-reply-list").height())
+</script>
