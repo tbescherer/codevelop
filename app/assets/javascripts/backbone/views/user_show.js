@@ -9,18 +9,13 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.listenTo(this.model.answered_questions(), 'sync', this.render)
-    this.listenTo(Codevelop.Collections.questions, 'add', this.render)
-    this.question_id = options.question_id
-  },
-
-  initialize: function(options) {
     this.currentUser = options.currentUser
+    this.listenTo(this.currentUser, 'sync', this.render)
     this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function() {
-    var content = this.template({user: this.model});
+    var content = this.template({user: this.model, currentUser: this.currentUser});
     this.$el.html(content);
     this.aboutView();
     return this;

@@ -4,7 +4,7 @@
   </div>
   <h1 id="username"><%= user.escape('username') %></h1>
   <h1 id="facts"><%=user.escape('age')%> | <%=user.escape('language')%> | <%=user.escape('match_score')%>% match</h1>
-  <% if (user.id) { %>
+  <% if (user.id && currentUser.id) { %>
   <button id="start-convo">Send a message!</button>
   <% } %>
 </section>
