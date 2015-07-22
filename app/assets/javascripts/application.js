@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require jquery-ui/selectmenu
 //= require jquery-ui/dialog
+//= require jquery.infinite-pages
 //= require serialize_json
 //= require underscore
 //= require backbone
