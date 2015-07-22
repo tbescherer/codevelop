@@ -1,6 +1,7 @@
-<section id="search-area">
-  <label for="query">Query</label>
-  <input id="query" type="text" class="query">
+<section id="search-area" class="group">
+  <input id="query" type="text" class="query" placeholder="Search by Username" value="<%=users.query%>">
+  <button class="prev-page"><</button>
+  <button class="next-page">></button>
 </section>
 <ul class='users group'>
   <% users.each(function(user) { %>

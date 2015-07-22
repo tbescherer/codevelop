@@ -2,7 +2,9 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
   template: JST['users/index'],
 
   events: {
-    "change .query": "search"
+    "change .query": "search",
+    "click .next-page": "nextPage",
+    "click .prev-page": "prevPage"
   },
 
   initialize: function(options) {
@@ -12,7 +14,7 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
   },
 
   render: function() {
-    var content = this.template({users: this.collection, currentUser: this.currenUser});
+    var content = this.template({users: this.collection, currentUser: this.currentUser});
     this.$el.html(content)
     return this;
   },
@@ -21,11 +23,35 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     event.preventDefault();
     this.collection.pageNum = 1;
     this.collection.query = this.$(".query").val();
-    this.users.fetch({
+    this.collection.fetch({
       data: {
         query: this.collection.query,
         page: this.collection.pageNum
       }
+    });
+  },
+
+  nextPage: function (event) {
+    this.collection.fetch({
+      data: {
+        query: this.collection.query,
+        page: this.collection.pageNum + 1
+      },
+      success: function() {
+        this.collection.pageNum++
+      }.bind(this)
+    });
+  },
+
+  prevPage: function (event) {
+    this.collection.fetch({
+      data: {
+        query: this.collection.query,
+        page: this.collection.pageNum - 1
+      },
+      success: function() {
+        this.collection.pageNum--
+      }.bind(this)
     });
   }
 })
