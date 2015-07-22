@@ -1,6 +1,8 @@
 Codevelop.Views.UsersIndex = Backbone.View.extend({
   template: JST['users/index'],
 
+  className: "users-index",
+
   events: {
     "change .query": "search",
   },

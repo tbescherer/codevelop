@@ -40,13 +40,24 @@
 }
 
 .user-index-block {
-  border: 1px solid gray;
+  border-bottom: 1px solid #ccc;
   float: left;
-  margin-left: 28px;
-  margin-top: 30px;
+  margin: 15px;
+  width: 280px;
+  height: 208px;
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.user-index-block:hover {
+  border: 1px solid #ccc;
+  height: 207px;
   width: 278px;
-  height: 210px;
-  display: block
+}
+
+.users-index {
+  background: #F3F5F9
 }
 
 .group:after {
