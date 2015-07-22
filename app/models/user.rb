@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include PgSearch
+  pg_search_scope :search_by_username, :against => :username
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
   has_attached_file :avatar, default_url: "https://s3.amazonaws.com/codevelopavatarproduction/placeholder.png"

@@ -8,6 +8,9 @@ module Api
 
     def index
       @users = User.eager_load(user_answers: [answer_choice: :question])
+
+      @users = @users.search_by_username(params[:query]) if params[:query]
+
       render :index
     end
 
