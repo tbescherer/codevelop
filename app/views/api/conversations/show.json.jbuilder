@@ -21,7 +21,7 @@ json.user_two do
   json.match_score User.find(@conversation.user_two_id).match_score(current_user)
 end
 
-json.replies @conversation.replies.order('created_at DESC') do |reply|
+json.replies @conversation.replies.order('created_at ASC') do |reply|
   json.body reply.body
   json.user_id reply.user_id
   json.user User.find(reply.user_id)

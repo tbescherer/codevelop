@@ -4,9 +4,7 @@ Codevelop.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.users = options.users;
     this.conversations = Codevelop.Collections.conversations
-    this.conversations.fetch()
-    this.currentUser = new Codevelop.Models.CurrentUser();
-    this.currentUser.fetch()
+    this.currentUser = Codevelop.Models.currentUser
   },
 
   routes: {

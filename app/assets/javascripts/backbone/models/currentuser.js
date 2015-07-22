@@ -22,3 +22,4 @@ Codevelop.Models.CurrentUser = Codevelop.Models.User.extend({
   },
 
 });
+  Codevelop.Models.currentUser = new Codevelop.Models.CurrentUser();

@@ -16,5 +16,12 @@
   <button>Send</button>
 </form>
 <script>
-  $(".conversation-reply-list").scrollTop($(".conversation-reply-list").height())
+  $(".conversation-reply-list").scrollTop($(".conversation-reply-list").height() + 400)
+
+  $("#body").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("#send-message").submit();
+    }
+});
 </script>

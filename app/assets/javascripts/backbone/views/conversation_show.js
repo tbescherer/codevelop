@@ -9,13 +9,20 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
 
   initialize: function(options){
     this.currentUser = options.currentUser;
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.currentUser, 'incoming_message', this.refresh.bind(this));
+    this.listenTo(this.model, 'sync add', this.render);
+    this.listenTo(this.model.replies(), 'sync', this.render)
   },
 
   render: function() {
+    console.log("render")
     var content = this.template({conversation: this.model, currentUser: this.currentUser});
     this.$el.html(content);
     return this;
+  },
+
+  refresh: function() {
+    this.model.fetch();
   },
 
   sendMessage: function(event){
@@ -27,7 +34,6 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
     message.save(attrs, {
       success: function(model){
         this.model.replies().add(message)
-        this.render();
       }.bind(this)
     })
   }

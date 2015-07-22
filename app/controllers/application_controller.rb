@@ -26,4 +26,15 @@ class ApplicationController < ActionController::Base
   def require_signed_in!
     redirect_to new_session_url unless signed_in?
   end
+
+  def push_message(message)
+    user_one_id = message.conversation.user_one_id
+    user_two_id = message.conversation.user_two_id
+    if user_one_id == current_user.id
+      recipient_id = user_two_id
+    else
+      recipient_id = user_one_id
+    end
+    Pusher.trigger("user_#{recipient_id}_messages", 'new_message', message.to_json)
+  end
 end

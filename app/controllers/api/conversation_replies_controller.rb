@@ -5,12 +5,16 @@ module Api
 
     def create
       @conversation_reply = current_user.conversation_replies.new(conv_reply_params)
-
       if @conversation_reply.save
+        push_message(@conversation_reply)
         render json: []
       else
         render json: []
       end
+    end
+
+    def show
+      render json: @conversation_reply
     end
 
     private
