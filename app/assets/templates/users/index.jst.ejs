@@ -1,8 +1,7 @@
 <section id="search-area" class="group">
   <input id="query" type="text" class="query" placeholder="Search by Username" value="<%=users.query%>">
-  <button class="prev-page"><</button>
-  <button class="next-page">></button>
 </section>
+<section class="infinite-users">
 <ul class='users group'>
   <% users.each(function(user) { %>
     <a href="#/users/<%= user.id %>">
@@ -15,3 +14,4 @@
     </a>
   <% }) %>
 </ul>
+</section>

@@ -7,7 +7,10 @@ Codevelop.Collections.Users = Backbone.Collection.extend({
   },
 
   parse: function(response) {
-    return response;
+    if (response.totalPages) {
+      this.totalPages = response.totalPages;
+    }
+    return response.users;
   },
 
   getOrFetch: function(id) {

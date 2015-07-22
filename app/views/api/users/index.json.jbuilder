@@ -1,4 +1,4 @@
-json.array! @users do |user|
+json.users @users do |user|
   json.id user.id
   json.username user.username
   json.language user.language
@@ -6,3 +6,5 @@ json.array! @users do |user|
   json.match_score user.match_score(current_user)
   json.avatar_url user.avatar.url
 end
+
+json.totalPages @users.total_pages

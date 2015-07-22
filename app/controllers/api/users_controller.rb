@@ -10,7 +10,7 @@ module Api
       @users = User.eager_load(user_answers: [answer_choice: :question])
       @users = @users.search_by_username(params[:query]) unless params[:query].blank?
       @users = @users.sort_by{|user| -user.match_score(current_user)}
-      @users = Kaminari.paginate_array(@users).page(params[:page])
+      @users = Kaminari.paginate_array(@users).page(params[:page]).per(18)
       render :index
     end
 
