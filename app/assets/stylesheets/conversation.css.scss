@@ -63,3 +63,33 @@
   overflow-x: hidden;
   height: 700px;
 }
+
+.empty-convo-list {
+  height: 400px;
+  border: 1px dashed #ccc;
+  display: block;
+  position: relative;
+}
+
+#message-exhortation {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#find-pair {
+  display: block;
+  background: #313740;
+  padding: 10px 30px;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  float: left;
+  left: 41%;
+}
+
+#find-pair:hover {
+  background: #3C444E
+}

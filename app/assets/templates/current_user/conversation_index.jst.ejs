@@ -1,5 +1,6 @@
 
 <h1>Messages</h1>
+<% if (conversations.length > 0) { %>
 <ul class="conversation-list">
 <% conversations.each(function(conversation){ %>
   <% if (conversation.get("user_one") !== undefined && !(conversation.replies().length === 0)) { %>
@@ -12,7 +13,12 @@
         <p>Sent at: <%= conversation.replies().first().get("time") %></p>
       </a>
     </li>
-
   <% } %>
 <% }) %>
 </ul>
+<% } else { %>
+  <div class="empty-convo-list">
+    <h1 id="message-exhortation">Looks like you haven't messaged anyone... what are you waiting for? </h1>
+    <a id="find-pair" href="#">Find a Pair</a>
+  </div>
+<% } %>
