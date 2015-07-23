@@ -45,16 +45,32 @@ class User < ActiveRecord::Base
     user
   end
 
+  # def match_score(other_user)
+  #   my_user_answers = self.user_answers
+  #   other_user_answers = other_user.user_answers
+  #   my_answer_choices = my_user_answers.map{|i|i.answer_choice}
+  #   other_answer_choices = other_user_answers.map{|i|i.answer_choice}
+  #   my_questions = my_answer_choices.map{|i|i.question}
+  #   other_questions = other_answer_choices.map{|i|i.question}
+  #
+  #
+  #   answer_choices = my_answer_choices & other_answer_choices
+  #   questions = my_questions & other_questions
+  #   return (answer_choices.count.to_f/(questions.count+1)).round(2)*100
+  # end
+
   def match_score(other_user)
-    my_user_answers = self.user_answers
-    other_user_answers = other_user.user_answers
-    my_answer_choices = my_user_answers.map{|i|i.answer_choice}
-    other_answer_choices = other_user_answers.map{|i|i.answer_choice}
-    my_questions = my_answer_choices.map{|i|i.question}
-    other_questions = other_answer_choices.map{|i|i.question}
-    answer_choices = my_answer_choices & other_answer_choices
-    questions = my_questions & other_questions
-    return (answer_choices.count.to_f/(questions.count+1)).round(2)*100
+    num = 0
+    denom = 1
+    questions = self.answered_questions & other_user.answered_questions
+    questions.each do |question|
+      my_answ = self.answer_choices.find_by(question_id: question.id)
+      their_answ = other_user.answer_choices.find_by(question_id: question.id)
+      weight = self.user_answers.find_by(answer_choice_id: my_answ.id).weight
+      num += weight if my_answ == their_answ
+      denom += weight
+    end
+    return num.to_f/denom * 100
   end
 
   def password=(password)
