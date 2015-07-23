@@ -15,10 +15,13 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   },
 
   render: function() {
-    console.log("render")
-    var content = this.template({conversation: this.model, currentUser: this.currentUser});
-    this.$el.html(content);
-    return this;
+    if (this.model.get("user_one_id") === this.currentUser.id || this.model.get("user_two_id") === this.currentUser.id) {
+      var content = this.template({conversation: this.model, currentUser: this.currentUser});
+      this.$el.html(content);
+    } else {
+      this.$el.html("<div>You don't have permission to read this conversation!</div>")
+    }
+      return this;
   },
 
   refresh: function() {
