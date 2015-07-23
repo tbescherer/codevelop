@@ -9,6 +9,7 @@
   border-top: 1px solid #ccc;
   padding: 10px;
   background: #fff;
+  border-radius: 3px;
 }
 
 .conversation-box:nth-child(odd){
@@ -23,7 +24,7 @@
 }
 
 .conversation-box:hover {
-  background: #aaa;
+  background: #ccc;
 }
 
 .messages-index {
@@ -33,8 +34,4 @@
 .messages-index h1{
   font-size: 24px;
   padding-bottom: 20px;
-}
-
-.conversation-list {
-  border: none;
 }

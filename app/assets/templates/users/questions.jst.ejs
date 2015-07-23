@@ -1,6 +1,8 @@
-<h3>Question 1</h3>
-<p>Content Content Content</p>
-<h3>Question 2</h3>
-<p>Content Content Content</p>
-<h3>Question 3</h3>
-<p>Content Content Content</p>
+<ul class="question-responses">
+  <% user._answeredQuestions.each(function(question) { %>
+  <li>
+  <p>Question: <%= question.get("question_body") %></p>
+  <p>Their Answer: <%= question.get("body") %></p>
+  </li>
+<% }) %>
+</ul>

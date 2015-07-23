@@ -37,7 +37,7 @@ User.create(
 )
 
 choices = ["Yes", "No", "Now and Again"]
-20.times do |i|
+100.times do |i|
   options = []
   text = "#{Faker::Hacker.ingverb} #{Faker::Hacker.adjective} #{Faker::Hacker.noun}. Yes or no?"
   question = Question.create(body: text)

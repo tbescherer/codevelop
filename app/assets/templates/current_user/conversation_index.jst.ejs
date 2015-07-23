@@ -10,7 +10,7 @@
       <a href="#/messages/<%= conversation.id %>" class="group">
         <p>Conversation with <%=otherPerson.username%> </p>
         <p><%= conversation.replies().first().get("user").username %>: <%= conversation.replies().first().get("body") %> </p>
-        <p>Sent at: <%= conversation.replies().first().get("time") %></p>
+        <p>Sent <%= conversation.replies().first().get("time") %> ago</p>
       </a>
     </li>
   <% } %>

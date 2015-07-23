@@ -27,7 +27,7 @@ Codevelop.Views.UserShow = Backbone.View.extend({
   },
 
   pictureView: function() {
-    var view = new Codevelop.Views.PhotoView({model: this.model})
+    var view = new Codevelop.Views.PhotoView({model: this.model, currentUser: this.currentUser})
     this.$el.find(".content-tabs").html(view.render().$el)
   },
 
