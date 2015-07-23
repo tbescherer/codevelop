@@ -10,8 +10,9 @@ Codevelop.Views.ConversationShow = Backbone.View.extend({
   initialize: function(options){
     this.currentUser = options.currentUser;
     this.listenTo(this.currentUser, 'incoming_message', this.refresh.bind(this));
-    this.listenTo(this.model, 'sync add', this.render);
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.replies(), 'sync', this.render)
+    this.listenTo(this.currentUser, 'sync', this.render)
   },
 
   render: function() {

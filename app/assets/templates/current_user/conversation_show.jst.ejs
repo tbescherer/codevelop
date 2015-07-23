@@ -17,7 +17,7 @@
 </form>
 <script>
   $(".conversation-reply-list").scrollTop($(".conversation-reply-list").height() + 400)
-
+  $("#body").focus();
   $("#body").keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault();

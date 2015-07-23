@@ -79,8 +79,14 @@
 }
 
 .about-input {
-  margin: 0;
+  float: left;
+  resize: none;
+  font-size: 16px;
+  padding: 5px;
+  margin-top: 30px;
   display: block;
+  width: 100%;
+  height: 60px;
 }
 
 .about-section button {
