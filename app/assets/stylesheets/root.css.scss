@@ -181,11 +181,15 @@ body {
   padding-top: 20px;
   display: block;
   float: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: 0px;
 }
 
 #sign-out {
-  float: right;
-  display: block;
+  float: left;
+  background: transparent;
 }
 
 #codevelop-button {

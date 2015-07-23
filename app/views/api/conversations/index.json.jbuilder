@@ -2,24 +2,26 @@ json.array! @conversations do |conversation|
   json.id conversation.id
   json.user_one_id conversation.user_one_id
   json.user_two_id conversation.user_two_id
+  user_one = User.find(conversation.user_one_id)
   json.user_one do
-    json.username User.find(conversation.user_one_id).username
-    json.id User.find(conversation.user_one_id).id
-    json.age User.find(conversation.user_one_id).age
-    json.job User.find(conversation.user_one_id).job
-    json.language User.find(conversation.user_one_id).language
-    json.avatar_url User.find(conversation.user_one_id).avatar.url
-    json.match_score User.find(conversation.user_one_id).match_score(current_user)
+    json.username user_one.username
+    json.id user_one.id
+    json.age user_one.age
+    json.job user_one.job
+    json.language user_one.language
+    json.avatar_url user_one.avatar.url
+    json.match_score user_one.match_score(current_user)
   end
 
+  user_two = User.find(conversation.user_two_id)
   json.user_two do
-    json.username User.find(conversation.user_two_id).username
-    json.id User.find(conversation.user_two_id).id
-    json.age User.find(conversation.user_one_id).age
-    json.job User.find(conversation.user_two_id).job
-    json.language User.find(conversation.user_one_id).language
-    json.avatar_url User.find(conversation.user_two_id).avatar.url
-    json.match_score User.find(conversation.user_two_id).match_score(current_user)
+    json.username user_two.username
+    json.id user_two.id
+    json.age user_two.age
+    json.job user_two.job
+    json.language user_two.language
+    json.avatar_url user_two.avatar.url
+    json.match_score user_two.match_score(current_user)
   end
 
   json.replies conversation.replies.order('created_at DESC') do |reply|
