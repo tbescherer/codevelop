@@ -3,7 +3,7 @@
 <div class="mini-profile group">
   <img class="face-thumb" src="<%= otherPerson.avatar_url %>"/>
   <h3><%= otherPerson.username%></h3>
-  <p id="personal-facts"><%=otherPerson.age%> | <%=otherPerson.language%> | <%=otherPerson.match_score%>% match</h1>
+  <p id="personal-facts"><%=otherPerson.age%> | <%=otherPerson.language%> | <%=otherPerson.match_score | 0%>% match</h1>
 </div>
 <ul class="conversation-reply-list">
   <% conversation.replies().each(function(reply) { %>

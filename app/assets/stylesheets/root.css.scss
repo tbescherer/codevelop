@@ -40,7 +40,7 @@ body {
 
 .btn-codevelop:hover {
   background-color: #1f57a3;
-  border: none;
+  outline: none;
 }
 
 .sign-up-area {
@@ -204,13 +204,12 @@ body {
   color:#D6E1EB;
   background-color: #114A9E;
   border: 1px solid #658BBF;
-  width: 80px;
   font-size: 12px;
 }
 
 #demo-button-land .demo-user-submit:hover {
   background-color: #1f57a3;
-  border: none;
+  outline: none;
 }
 
 #demo-button-land {
