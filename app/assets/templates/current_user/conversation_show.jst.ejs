@@ -1,10 +1,12 @@
 <% if (conversation.get("user_one") !== undefined) { %>
 <% var otherPerson = currentUser.notMe(conversation.get("user_one"), conversation.get("user_two")) %>
+<a href="#/users/<%=otherPerson.id %>">
 <div class="mini-profile group">
   <img class="face-thumb" src="<%= otherPerson.avatar_url %>"/>
   <h3><%= otherPerson.username%></h3>
   <p id="personal-facts"><%=otherPerson.age%> | <%=otherPerson.language%> | <%=otherPerson.match_score | 0%>% match</h1>
 </div>
+</a>
 <ul class="conversation-reply-list">
   <% conversation.replies().each(function(reply) { %>
     <li><%= reply.get("user").username %>: <%= reply.get("body") %></li>
