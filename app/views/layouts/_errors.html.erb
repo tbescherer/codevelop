@@ -1,1 +1,3 @@
-<%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+<% if flash[:errors] %>
+<div id="errors"><%= flash[:errors].join("<br>").html_safe%></div>
+<% end %>

@@ -1,9 +1,9 @@
 $(function(){
-  $(".language-selector").selectmenu();
 
+  $(".language-selector").selectmenu();
   var dialog = $( "#dialog-form" ).dialog({
     autoOpen: false,
-    height: 330,
+    height: 360,
     width: 300,
     modal: true,
     position: { my: "center", at: "center top", of: ".language-selection-area"},
@@ -36,4 +36,6 @@ $(function(){
       dialog.dialog( "close" )
     }
   });
+
+  if($("#errors").length) {dialog.dialog("open")};
 })

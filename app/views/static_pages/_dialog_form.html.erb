@@ -1,12 +1,12 @@
-
 <div id="dialog-form" title="Sign Up!">
+  <%= render partial: "layouts/errors" %>
   <form action="<%= users_url %>" method="post">
     <%= user_auth_token %>
     <label for="username">Username</label>
-    <input type="text" name="user[username]" id="username" placeholder="Username">
+    <input type="text" name="user[username]" id="username" placeholder="Username" value="<%=params[:username]%>">
 
     <label for="email">Email</label>
-    <input type="text" name="user[email]" id="email" placeholder="Email">
+    <input type="text" name="user[email]" id="email" placeholder="Email" value="<%= params[:email]%>">
 
     <label for="password">Password</label>
     <input type="password" name="user[password]" id="password" placeholder="Password">

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_by_username, :against => :username
   validates :username, :password_digest, :session_token, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password, length: { minimum: 6, allow_nil: true}
   has_attached_file :avatar, default_url: "https://s3.amazonaws.com/codevelopavatarproduction/placeholder.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

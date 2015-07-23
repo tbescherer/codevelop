@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       flash[:errors] = @user.errors.full_messages
+      redirect_to root_url :username => @user.username, :email => @user.email
     end
   end
 
