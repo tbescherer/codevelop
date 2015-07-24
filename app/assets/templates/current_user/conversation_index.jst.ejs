@@ -9,8 +9,8 @@
       <img id="img-thumbnail" src="<%= otherPerson.avatar_url%>">
       <a href="#/messages/<%= conversation.id %>" class="group">
         <p>Conversation with <%=otherPerson.username%> </p>
-        <p><%= conversation.replies().first().get("user").username %>: <%= conversation.replies().first().get("body") %> </p>
-        <p>Sent <%= conversation.replies().first().get("time") %> ago</p>
+        <p><%= conversation.replies().last().get("user").username %>: <%= conversation.replies().last().get("body") %> </p>
+        <p>Sent <%= conversation.replies().last().get("time") %> ago</p>
       </a>
     </li>
   <% } %>
