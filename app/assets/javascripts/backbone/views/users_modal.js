@@ -20,10 +20,12 @@ Codevelop.Views.UserModal = Backbone.View.extend({
 
   mitigateScrim: function() {
     $(".modal-view").remove()
+    $("body").css("overflow", "visible")
   },
 
   startConvo: function() {
     $(".modal-view").remove()
+    $("body").css("overflow", "visible")
     var conversation = Codevelop.Collections.conversations.findOrCreate(this.currentUser.id, this.model.id)
   },
 

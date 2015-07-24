@@ -1,12 +1,12 @@
 module Api
   class ConversationsController < ApplicationController
     def show
-      @conversation = Conversation.find(params[:id])
+      @conversation = current_user.conversations.includes(:user_one, :user_two, replies: :user).find(params[:id])
       render :show
     end
 
     def index
-      @conversations = current_user.conversations.includes(:replies)
+      @conversations = current_user.conversations.includes(:user_one, :user_two, replies: :user)
       render :index
     end
 
@@ -14,9 +14,9 @@ module Api
       @conversation = Conversation.new(conv_params)
 
       if @conversation.save
-        render json: @conversation
+        render :show
       else
-        render json: @conversation
+        render json: []
       end
     end
 

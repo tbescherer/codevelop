@@ -3,7 +3,9 @@
 <div class="modal-profile">
   <div class="top-of-things">
     <p><%=user.escape("match_score")%> &#x2022; <%=user.escape("language")%></p>
-    <button id="modal-start-convo">Message</button>
+    <% if (user.id && currentUser.id){ %>
+      <button id="modal-start-convo">Message</button>
+    <% } %>
     <div id="modal-profile">
       <img src='<%=user.get("avatar_url")%>' id="modal-profile-pic">
     </div>

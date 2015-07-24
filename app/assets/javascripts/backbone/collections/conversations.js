@@ -19,23 +19,26 @@ Codevelop.Collections.Conversations = Backbone.Collection.extend({
   },
 
   findOrCreate: function(user_one_id, user_two_id){
+    console.log(user_one_id);
+    console.log(user_two_id);
     var convoOne = this.findWhere({user_one_id: user_one_id, user_two_id: user_two_id})
     var convoTwo = this.findWhere({user_one_id: user_two_id, user_two_id: user_one_id})
     var convo = convoOne || convoTwo
     if (!convo) {
       convo = new Codevelop.Models.Conversation({user_one_id: user_one_id, user_two_id: user_two_id})
       convo.save({}, {
-        success: function() {
-          this.add(convo)
-        }.bind(this)
+        success: function(model) {
+          Codevelop.Collections.conversations.add(model)
+          Backbone.history.navigate("#/messages/" + model.id, {trigger: true})
+        },
       })
+    } else {
+      convo.fetch({
+        success: function(model) {
+          Backbone.history.navigate("#/messages/" + model.id, {trigger: true})
+        }
+      });
     }
-    convo.fetch({
-      success: function(model) {
-        Backbone.history.navigate("#/messages/" + model.id, {trigger: true})
-      }
-    });
-
     return convo;
   }
 });
