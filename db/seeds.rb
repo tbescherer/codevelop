@@ -24,10 +24,6 @@ names.each do |name|
   )
 end
 
-
-
-
-
 25.times do
   users << User.create(
   username: Faker::Internet.user_name,
