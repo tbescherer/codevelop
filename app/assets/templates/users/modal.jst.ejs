@@ -2,7 +2,7 @@
 </div>
 <div class="modal-profile">
   <div class="top-of-things">
-    <p><%=user.escape("match_score") | 0%> &#x2022; <%=user.escape("language")%></p>
+    <p><%=user.escape("match_score") | 0%>% match &#x2022; <%=user.escape("language")%></p>
     <% if (user.id && currentUser.id){ %>
       <button id="modal-start-convo">Message</button>
     <% } %>
