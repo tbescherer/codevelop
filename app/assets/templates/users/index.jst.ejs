@@ -5,7 +5,7 @@
 <section class="infinite-users">
 <ul class='users group'>
   <% users.each(function(user) { %>
-    <a href="#/users/<%= user.id %>">
+    <a class="test-button" href="#/users/<%= user.id %>" data-user-id="<%= user.id%>">
       <li class="user-index-block">
         <img class="user-picture" src="<%= user.escape('avatar_url') %>">
         <h3><%= user.escape('username') %></h3>

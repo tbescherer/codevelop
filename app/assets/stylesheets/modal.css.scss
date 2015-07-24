@@ -1,0 +1,106 @@
+.modal-view {
+  top: 0px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 7;
+}
+
+#left-scrim {
+  height: 100%;
+  width: 100%;
+  opacity: 0.0;
+  background-color: black;
+  transition: opacity 0.5s;
+  position: absolute;
+}
+
+.modal-profile {
+  position:absolute;
+  height: 100%;
+  width: 500px;
+  background: #114A9E;
+  right: -500px;
+  top:0px;
+  transition: right 0.5s;
+}
+
+.top-of-things {
+  background: #4870C8;
+  height: 200px;
+}
+
+.bottom-of-things {
+  background: #fff;
+  height: 100%;
+}
+
+#modal-profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+
+}
+
+#modal-profile-pic {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#modal-username {
+  font-size: 26px;
+  color: black;
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+#modal-about-fields {
+  position: relative;
+  top: 100px;
+  padding: 20px;
+}
+
+#modal-about-fields h1 {
+  font-size: 20px;
+  color: black;
+}
+
+.modal-profile-button {
+  position: relative;
+  top: 100px;
+  background: #313740;
+  padding: 10px 30px;
+  border-radius: 5%;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  left: 180px;
+}
+
+.modal-profile-button:hover {
+  background: #3C444E
+}
+
+#modal-start-convo{
+  padding: 10px;
+  border-radius: 5%;
+  font-size: 16px;
+  color:#ddd;
+  background:transparent;
+  border: 1px solid #ccc;
+  width: 100px;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#modal-start-convo:hover {
+  outline: none;
+  border: 1px solid #fff;
+}

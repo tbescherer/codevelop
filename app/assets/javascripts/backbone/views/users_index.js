@@ -5,10 +5,11 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
 
   events: {
     "change .query": "search",
+    "click .test-button": "userShowModal",
   },
 
   initialize: function(options) {
-    this.listenTo(this.collection, 'sync', this.render),
+    this.listenTo(this.collection, 'update', this.render),
     this.currentUser = options.currentUser
     this.collection.pageNum = 1;
   },
@@ -17,7 +18,9 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     var content = this.template({users: this.collection, currentUser: this.currentUser});
     this.$el.html(content)
     this.listenForScroll();
+    console.log("render")
     return this;
+
   },
 
   search: function(event) {
@@ -67,5 +70,20 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     $(window).off("scroll");
     var throttledCallback = _.throttle(this.nextPage.bind(this), 200);
     $(window).on("scroll", throttledCallback);
+  },
+
+  userShowModal: function(event) {
+    event.preventDefault();
+    var user_id = $(event.currentTarget).data("userId");
+    $("body").css("overflow", "hidden")
+    var user = this.collection.getOrFetch(user_id);
+    var modal = new Codevelop.Views.UserModal({model: user, currentUser: this.currentUser})
+    var content = modal.render().$el
+    $(".backdrop").prepend(content)
+    window.setTimeout(function(){
+      $(".modal-profile").css("right", "0px")
+      $("#left-scrim").css("opacity", "0.6")
+    }, 10)
+
   }
 })

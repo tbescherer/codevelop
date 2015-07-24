@@ -32,7 +32,6 @@ Codevelop.Collections.Conversations = Backbone.Collection.extend({
     }
     convo.fetch({
       success: function(model) {
-        debugger
         Backbone.history.navigate("#/messages/" + model.id, {trigger: true})
       }
     });
