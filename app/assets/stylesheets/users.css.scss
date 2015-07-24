@@ -21,8 +21,9 @@
 }
 
 .profile-picture {
-  width: 280px;
+  width: 260px;
   height: 150px;
+  overflow: hidden;
 }
 
 .menu-button {
@@ -67,7 +68,7 @@
 }
 
 .user-picture {
-  width: 278px;
+  width:150px;
   height: 150px;
   margin: auto;
   display: block;
