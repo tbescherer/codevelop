@@ -4,7 +4,8 @@ Codevelop.Views.UserModal = Backbone.View.extend({
 
   events: {
     "click #modal-start-convo": "startConvo",
-    "click #left-scrim": "killScrim"
+    "click #left-scrim": "killScrim",
+    "click .modal-profile-button": "mitigateScrim"
   },
 
   initialize: function(options) {
@@ -17,7 +18,12 @@ Codevelop.Views.UserModal = Backbone.View.extend({
     return this;
   },
 
+  mitigateScrim: function() {
+    $(".modal-view").remove()
+  },
+
   startConvo: function() {
+    $(".modal-view").remove()
     var conversation = Codevelop.Collections.conversations.findOrCreate(this.currentUser.id, this.model.id)
   },
 
