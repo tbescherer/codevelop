@@ -10,7 +10,7 @@ json.array! @conversations do |conversation|
     json.job conversation.user_one.job
     json.language conversation.user_one.language
     json.avatar_url conversation.user_one.avatar.url
-    # json.match_score user_one.match_score(current_user)
+    json.match_score conversation.user_one.match_score(current_user)
   end
 
   json.user_two do
@@ -20,7 +20,7 @@ json.array! @conversations do |conversation|
     json.job conversation.user_two.job
     json.language conversation.user_two.language
     json.avatar_url conversation.user_two.avatar.url
-    # json.match_score user_two.match_score(current_user)
+    json.match_score conversation.user_two.match_score(current_user)
   end
 
   json.replies conversation.replies do |reply|

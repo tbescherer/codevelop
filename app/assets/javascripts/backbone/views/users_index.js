@@ -12,6 +12,7 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     this.listenTo(this.collection, 'update', this.render),
     this.currentUser = options.currentUser
     this.collection.pageNum = 1;
+    this.fetching = false
   },
 
   render: function() {
@@ -38,7 +39,9 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
 
   nextPage: function (event) {
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-      if (this.collection.pageNum <= this.collection.totalPages) {
+      console.log(this.collection.pageNum, this.collection.totalPages)
+      if ((this.collection.pageNum < this.collection.totalPages) & !this.fetching) {
+        this.fetching = true
         $("#loading-message").html('<p>Loading more matches...</p>')
         this.collection.fetch({
           data: {
@@ -46,6 +49,8 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
             page: this.collection.pageNum + 1
           },
           success: function() {
+            console.log("fetch worked!")
+            this.fetching = false
             this.collection.pageNum++
           }.bind(this),
           remove: false
@@ -54,17 +59,6 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     }
   },
 
-  prevPage: function (event) {
-    this.collection.fetch({
-      data: {
-        query: this.collection.query,
-        page: this.collection.pageNum - 1
-      },
-      success: function() {
-        this.collection.pageNum--
-      }.bind(this)
-    });
-  },
 
   listenForScroll: function() {
     $(window).off("scroll");
