@@ -38,7 +38,7 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
 
   nextPage: function (event) {
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-      if (this.collection.pageNum < this.collection.totalPages) {
+      if (this.collection.pageNum <= this.collection.totalPages) {
         $("#loading-message").html('<p>Loading more matches...</p>')
         this.collection.fetch({
           data: {

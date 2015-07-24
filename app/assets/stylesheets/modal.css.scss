@@ -17,12 +17,13 @@
 
 .modal-profile {
   position:absolute;
-  height: 100%;
+  height: 100vh;
   width: 500px;
   background: #114A9E;
   right: -500px;
   top:0px;
   transition: right 0.5s;
+  overflow: auto;
 }
 
 .top-of-things {
@@ -60,9 +61,11 @@
 }
 
 #modal-about-fields {
+  color: #5E6572;
   position: relative;
   top: 100px;
   padding: 20px;
+  overflow: auto;
 }
 
 #modal-about-fields h1 {
