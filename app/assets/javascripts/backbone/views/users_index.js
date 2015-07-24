@@ -80,6 +80,7 @@ Codevelop.Views.UsersIndex = Backbone.View.extend({
     var modal = new Codevelop.Views.UserModal({model: user, currentUser: this.currentUser})
     var content = modal.render().$el
     $(".backdrop").prepend(content)
+    $(".modal-profile").css("top", $(window).scrollTop() + "px")
     window.setTimeout(function(){
       $(".modal-profile").css("right", "0px")
       $("#left-scrim").css("opacity", "0.6")
