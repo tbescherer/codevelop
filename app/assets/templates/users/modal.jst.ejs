@@ -2,6 +2,7 @@
 </div>
 <div class="modal-profile">
   <div class="top-of-things">
+    <p><%=user.escape("match_score")%> &#x2022; <%=user.escape("language")%></p>
     <button id="modal-start-convo">Message</button>
     <div id="modal-profile">
       <img src='<%=user.get("avatar_url")%>' id="modal-profile-pic">
@@ -11,11 +12,11 @@
   <div class="bottom-of-things">
     <div id="modal-about-fields" class="group">
       <h1>About Me</h1>
-      <p><%=user.get("about_field_one")%></p>
+      <p><%=user.escape("about_field_one")%></p>
       <h1>Skills</h1>
-      <p><%=user.get("about_field_two")%></p>
+      <p><%=user.escape("about_field_two")%></p>
       <h1>Message Me If</h1>
-      <p><%=user.get("about_field_three")%></p>
+      <p><%=user.escape("about_field_three")%></p>
     </div>
     <a class="modal-profile-button" href="#/users/<%= user.id %>">Visit Profile</a>
   </div>

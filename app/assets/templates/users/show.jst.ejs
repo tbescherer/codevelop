@@ -4,7 +4,7 @@
   </div>
   <div class="prof-words group">
     <h1 id="username"><%= user.escape('username') %></h1>
-    <h1 id="facts"><%= user.escape('age')%> | <%=user.escape('language')%> | <%=user.escape('match_score') | 0%>% match</h1>
+    <h1 id="facts"><%= user.escape('age')%> &#x2022; <%=user.escape('language')%> &#x2022; <%=user.escape('match_score') | 0%>% match</h1>
   </div>
   <% if (user.id && currentUser.id) { %>
     <button id="start-convo">Send a message!</button>
