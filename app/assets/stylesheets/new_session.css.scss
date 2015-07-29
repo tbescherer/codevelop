@@ -70,9 +70,17 @@
   z-index: -1
 }
 
+#sign-in-area #demo-button-land {
+  text-align: center;
+}
+
+#sign-in-area #demo-button-land .demo-user-submit {
+  float: none;
+}
+
 .btn-submit{
   padding: 10px;
-  border-radius: 5%;
+  border-radius: 3px;
   border: none;
 }
 

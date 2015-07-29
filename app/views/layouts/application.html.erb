@@ -12,22 +12,11 @@
   <%= csrf_meta_tags %>
   <script src="https://js.pusher.com/2.2/pusher.min.js"></script>
   <script>
-  //  // Enable pusher logging - don't include this in production
-  //  Pusher.log = function(message) {
-  //    if (window.console && window.console.log) {
-  //      window.console.log(message);
-  //    }
-  //  };
-   //
-  //  Pusher.log = function(message) {
-  //    console.log(message);
-  //  }
 
    window.pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>');
   </script>
 </head>
 <body>
-<!-- <%= render partial: "layouts/errors" %> -->
 <%= yield %>
 
 </body>
