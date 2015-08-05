@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                  :integer          not null, primary key
+#  username            :string           not null
+#  email               :string           not null
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  language            :string           default("none")
+#  uid                 :string
+#  provider            :string
+#  created_at          :datetime
+#  updated_at          :datetime
+#  about_field_one     :text
+#  about_field_two     :text
+#  about_field_three   :text
+#  age                 :integer
+#  job                 :string
+#  looking_for         :text
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#
+
 class User < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_by_username, :against => :username

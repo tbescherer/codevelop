@@ -38,6 +38,7 @@ gem "paperclip", "~> 4.3"
 gem 'aws-sdk'
 gem 'rspec-rails'
 gem 'factory_girl_rails'
+gem 'capybara'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -50,6 +51,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

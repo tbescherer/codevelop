@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id          :integer          not null, primary key
+#  user_one_id :integer          not null
+#  user_two_id :integer          not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Conversation < ActiveRecord::Base
   validates :user_one_id, :user_two_id, presence: true
   has_many :replies,
