@@ -51,7 +51,11 @@ RSpec.describe User, type: :model do
     expect(FactoryGirl.build(:user, username: "exampleman", email: "example@example.com", password: "password")).to be_valid
   end
 
-  # describe 'possesses all the correct associations' do
-  #   user = User.create!(username: "exampleman", email: "example@example.com", password: "password")
-  # end
+  describe 'possesses all the correct associations' do
+    it 'properly creates a user answer' do
+      user = User.create!(username: "exampleman", email: "example@example.com", password: "password")
+      answer = user.user_answers.create!(answer_choice_id: 1, weight: 10)
+      expect(user.user_answers.length).to equal(1)
+    end
+  end
 end
