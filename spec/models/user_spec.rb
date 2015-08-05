@@ -46,4 +46,12 @@ RSpec.describe User, type: :model do
   it 'needs a session token' do
     expect(FactoryGirl.build(:user, session_token: '')).to_not be_valid
   end
+
+  it 'creates a valid user when proper inputs are provided' do
+    expect(FactoryGirl.build(:user, username: "exampleman", email: "example@example.com", password: "password")).to be_valid
+  end
+
+  # describe 'possesses all the correct associations' do
+  #   user = User.create!(username: "exampleman", email: "example@example.com", password: "password")
+  # end
 end
