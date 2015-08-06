@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'needs a properly formatted email' do
-    expect(FactoryGirl.build(:user, email: "example")).to_not be_valid
+    expect(FactoryGirl.build(:user, email: "gaergaerg")).to_not be_valid
   end
 
   it 'needs a password digest' do
@@ -48,14 +48,21 @@ RSpec.describe User, type: :model do
   end
 
   it 'creates a valid user when proper inputs are provided' do
-    expect(FactoryGirl.build(:user, username: "exampleman", email: "example@example.com", password: "password")).to be_valid
+    expect(FactoryGirl.build(:user)).to be_valid
   end
 
   describe 'possesses all the correct associations' do
     it 'properly creates a user answer' do
-      user = User.create!(username: "exampleman", email: "example@example.com", password: "password")
+      user = User.create!(username: "toby", password: "password", email: "example@example.com")
       answer = user.user_answers.create!(answer_choice_id: 1, weight: 10)
-      expect(user.user_answers.length).to equal(1)
+      expect(user.user_answers.length).to eq(1)
+    end
+
+    it 'properly associates a new conversation' do
+      user = User.create!(username: "toby", password: "password", email: "example@example.com")
+      user_two = User.create!(username: "bob", password: "password", email: "example2@example.com")
+      conversation = Conversation.create!(user_one_id: user.id, user_two_id: user_two.id)
+      expect(user.conversations.length).to eq(1)
     end
   end
 end
