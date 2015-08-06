@@ -51,6 +51,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'launchy'
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
