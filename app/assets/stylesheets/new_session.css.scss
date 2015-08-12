@@ -16,20 +16,24 @@
   float: center;
 }
 
-.btn-github{
-  color:#fff;
-  background-color:#444;
-  border-color:rgba(0,0,0,0.2);
-  width: 200px;
-  text-align: center;
-  text-overflow:ellipsis;
-  padding: 5px;
-  display: block;
-  text-decoration: none;
-  font-size: 24px;
+#sign-in-area #username, #password {
+  text-align: left
 }
 
-.btn-github:hover{
+#sign-in-area .btn-github{
+  display: block;
+  border-radius: 5px;
+  color:#fff;
+  background-color:#444;
+  margin: 0 auto;
+  width: 240px;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#sign-in-area .btn-github:hover{
   color:#fff;
   background-color:#2b2b2b;
 }
@@ -44,7 +48,7 @@
 }
 
 #sign-in-area input {
-  font-size: 28px;
+  font-size: 20px;
   padding: 5px;
   width: 200px;
 }
@@ -61,31 +65,28 @@
 }
 
 #sign-in-area #the-line {
-  position: absolute;
+  margin-top: 30px;
+  position: relative;
   content: "";
   width: 900px;
   float: left;
   border-bottom: 1px solid #fff;
-  bottom: 105px;
-  z-index: -1
 }
 
 #sign-in-area #demo-button-land {
+  display: inline-block;
   text-align: center;
 }
 
-#sign-in-area #demo-button-land .demo-user-submit {
-  float: none;
+#sign-in-area form {
+  display: block;
 }
 
-.btn-submit{
+.btn-submit {
   padding: 10px;
   border-radius: 3px;
   border: none;
-}
-
-.btn-submit{
-  margin-top: 10px;
+  margin-top: 20px;
   color: #fff;
   background-color: #00D280;
   width: 60px
@@ -97,4 +98,14 @@
 
 .ui-dialog input {
   text-align: left;
+}
+
+#separating-line {
+  position: relative;
+  top: -10px;
+}
+
+.other-login-buttons {
+  display: block;
+  margin: 0 auto;
 }

@@ -4,27 +4,25 @@
 
   <form action="<%= session_url %>" method="post">
     <%= user_auth_token %>
-    <label for="username">Username</label>
-    <input type="text" name="user[username]" id="username">
+    <div id="username-area" class="group">
+      <label for="username">Username</label>
+      <input type="text" name="user[username]" id="username">
+    </div>
 
-    <label for="password">Password</label>
-    <input type="password" name="user[password]" id="password">
-
-    <input type="submit" value="Sign in" class="btn-submit">
+    <div id="password-area" class="group">
+      <label for="password">Password</label>
+      <input type="password" name="user[password]" id="password">
+    </div>
+    <div class="group">
+      <input type="submit" value="Sign in" class="btn-submit">
+    </div>
   </form>
 
-  <div id="demo-button-land" class="group">
-    <form action="<%= session_url %>" method="post">
-      <%= user_auth_token %>
-      <input type="hidden" name="user[username]" id="username" value="guest_user">
-      <input type="hidden" name="user[password]" id="password" value="password">
-      <input type="submit" value="Demo User" class="demo-user-submit">
-    </form>
-  </div>
-
   <span id="the-line"></span>
-  <p id="separating line">Or</p>
+  <p id="separating-line">Or</p>
 
-  <a class="btn-github" href="../auth/github">Sign in with Github!</a>
+  <div class="other-login-buttons group">
+    <a class="btn-github" href="../auth/github">Sign in with Github!</a>
+  </div>
 
 </div>
