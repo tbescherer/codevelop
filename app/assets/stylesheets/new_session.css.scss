@@ -26,6 +26,7 @@
   color:#fff;
   background-color:#444;
   margin: 0 auto;
+  margin-top: 10px;
   width: 240px;
   text-align: center;
   padding: 10px;
@@ -51,10 +52,11 @@
   font-size: 20px;
   padding: 5px;
   width: 200px;
+  border-radius: 3px;
 }
 
 #sign-in-area p {
-  margin: 30px auto;
+  margin: 20px auto;
   display: table;
   text-align: center;
   padding: 1px 6px;
@@ -108,4 +110,15 @@
 .other-login-buttons {
   display: block;
   margin: 0 auto;
+}
+
+.demo-user-submit-login {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  background: white;
+  padding: 10px 20px;
+  border: none;
+  color: #000;
+  border-radius: 3px;
 }

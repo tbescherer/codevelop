@@ -22,6 +22,14 @@
   <p id="separating-line">Or</p>
 
   <div class="other-login-buttons group">
+
+    <form action="<%= session_url %>" method="post">
+      <%= user_auth_token %>
+      <input type="hidden" name="user[username]" id="username" value="guest_user">
+      <input type="hidden" name="user[password]" id="password" value="password">
+      <button class="demo-user-submit-login">Demo User</button>
+
+    </form>
     <a class="btn-github" href="../auth/github">Sign in with Github!</a>
   </div>
 
